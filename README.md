@@ -2,6 +2,16 @@
 
 Website độc lập với English Practice Hub cũ, dùng nền xanh đen, tím và cyan tương tự thiết kế cũ.
 
+
+## Giao diện: Format B — Study Workspace
+
+- Sidebar trái: Thư viện, danh sách Unit và hai phần của Unit đang học.
+- Chọn Unit trước khi đọc bài giảng hoặc làm bài tập.
+- Mỗi Unit có hai mục: Bài giảng chi tiết và Bài tập mới (10 câu A–D + passage 5 câu).
+- Nút in riêng trên từng trang; bản in mở theo đúng nội dung đang xem.
+- Trên điện thoại sidebar đổi thành thanh điều hướng ngắn, tránh chiếm chiều rộng bài học.
+- Chưa thêm kiến thức Vocabulary chính thức; chỉ có khung chờ duyệt.
+
 ## Structure preview
 
 - Trang chủ chọn Unit; mỗi Unit có đúng hai lựa chọn: Bài giảng chi tiết / Bài tập mới.
