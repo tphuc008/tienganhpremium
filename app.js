@@ -42,26 +42,85 @@ async function initialize(){
  try{const draft=localStorage.getItem(PREVIEW_KEY);if(draft){const local=normalizeDB(JSON.parse(draft));db=local;}}catch(e){console.warn("Preview data invalid",e);}
  const id=window.location.hash.slice(1);state.view=["home","unit","lesson","practice","print","admin"].includes(id)?id:"home";state.unitId=db.units[0]?.id;render();
 }
-function navigation(){return '<header class="site-header"><div class="brand"><span class="logo">✦</span><span>English Practice Hub</span></div><nav class="nav" aria-label="Điều hướng">'+[["home","Trang chủ"],["unit","Bài học"],["practice","Luyện tập"],["print","In tài liệu"]].map(([key,label])=>'<button type="button" data-go="'+key+'" class="'+(state.view===key?"active":"")+'">'+label+'</button>').join("")+'</nav></header>';}
-function frame(content){return navigation()+'<main class="panel"><section class="page">'+content+'</section></main><div class="foot">Vocabulary Studio · <button data-go="admin">Quản lý</button></div>';}
-function titleRow(title,suffix){return '<div class="section-title"><h2>'+esc(title)+'</h2><span class="subtle">'+esc(suffix||"")+'</span></div>';}
-function home(){
-return '<div class="hero"><div><span class="eyebrow">VOCABULARY LEARNING</span><h1>English <span class="gradient">Practice Hub.</span></h1><p>Bài giảng · Luyện tập · Tài liệu</p><button class="btn primary" data-go="unit">Xem các Unit →</button></div><div class="hero-art">Aa</div></div>'+
-titleRow("Danh sách bài học","")+'<div class="cards">'+db.units.map((u,i)=>'<button class="unit-card" data-select-unit="'+esc(u.id)+'"><div class="row between"><span class="unitnum">UNIT '+String(i+1).padStart(2,"0")+'</span><span class="badge '+(isPublished(u)?"good":"")+'">'+(isPublished(u)?"Đã xuất bản":"Chưa có bài")+'</span></div><h3>'+esc(u.title)+'</h3><p>'+esc(u.topic)+'</p></button>').join("")+'</div>';
+
+function navigation(){
+ const unit=current();
+ return '<header class="site-header"><div class="brand"><span class="logo">✦</span><span>English Practice Hub</span></div>'+
+ '<nav class="nav" aria-label="Điều hướng chính"><button type="button" data-go="home" class="'+(state.view==="home"?"active":"")+'">Thư viện Unit</button>'+
+ (state.view!=="home"&&state.view!=="admin"?'<span class="current-unit-pill">'+esc(unit.title)+'</span>':"")+'</nav></header>';
 }
-function banner(u){return '<div class="crumb"><button data-go="home">Trang chủ</button> › '+esc(u.title)+'</div><div class="unit-banner"><span class="eyebrow">VOCABULARY · UNIT</span><div class="row between top"><div><h1>'+esc(u.title)+'</h1><p class="subtle" style="margin:0">'+esc(u.topic)+'</p></div><span class="badge '+(isPublished(u)?"good":"")+'">'+(isPublished(u)?"Published":"Preview")+'</span></div></div>';}
-function choice(icon,title,subtitle,action){return '<article class="choice-card"><div class="choice-icon">'+icon+'</div><h3>'+title+'</h3><p>'+subtitle+'</p><button class="btn primary" data-go="'+action+'">Mở '+(action==="lesson"?"bài giảng":"bài tập")+' →</button></article>';}
-function unitPage(){const u=current();return banner(u)+'<div class="choice-grid">'+choice("▤","Bài giảng chi tiết","Nội dung đã học · Teacher Notes", "lesson")+choice("✎","Bài tập mới","10 câu A–D · 1 passage / 5 câu","practice")+'</div><div class="row" style="margin-top:20px"><button class="btn secondary" data-go="print">▣ In tài liệu</button></div>';}
+function sidebar(){
+ const active=state.view;
+ return '<aside class="study-sidebar" aria-label="Điều hướng bài học">'+
+ '<div class="side-section-label">THƯ VIỆN</div><button type="button" class="side-link '+(active==="home"?"active":"")+'" data-go="home"><span class="side-icon">▦</span> Tất cả Unit</button>'+
+ '<div class="side-divider"></div><div class="side-section-label">DANH SÁCH UNIT</div>'+
+ db.units.map((u,i)=>'<button type="button" class="side-link side-unit '+(u.id===state.unitId&&active!=="home"?"active-unit":"")+'" data-select-unit="'+esc(u.id)+'"><span class="side-number">'+String(i+1).padStart(2,"0")+'</span><span class="side-unit-title">'+esc(u.title)+'</span></button>').join("")+
+ (active!=="home"?'<div class="side-divider"></div><div class="side-section-label">'+esc(current().title).toUpperCase()+'</div>'+
+ '<button type="button" class="side-link '+(active==="unit"?"active":"")+'" data-go="unit"><span class="side-icon">◈</span> Tổng quan</button>'+
+ '<button type="button" class="side-link '+(active==="lesson"?"active":"")+'" data-go="lesson"><span class="side-icon">▤</span> Bài giảng chi tiết</button>'+
+ '<button type="button" class="side-link '+(active==="practice"?"active":"")+'" data-go="practice"><span class="side-icon">✎</span> Bài tập mới</button>':"")+
+ '</aside>';
+}
+function mobileContext(){
+ if(state.view==="admin")return "";
+ return '<div class="mobile-context"><button class="'+(state.view==="home"?"selected":"")+'" data-go="home">Thư viện</button>'+
+ (state.view!=="home"?'<button class="'+(state.view==="unit"?"selected":"")+'" data-go="unit">'+esc(current().title)+'</button><button class="'+(state.view==="lesson"?"selected":"")+'" data-go="lesson">Bài giảng</button><button class="'+(state.view==="practice"?"selected":"")+'" data-go="practice">Bài tập</button>':"")+
+ '</div>';
+}
+function frame(content){
+ return navigation()+'<main class="panel workspace-shell '+(state.view==="admin"?"workspace-admin":"")+'">'+
+ (state.view==="admin"?"":sidebar())+
+ '<section class="page study-main">'+mobileContext()+content+'</section></main>'+
+ '<div class="foot">English Practice Hub · Vocabulary</div>';
+}
+
+function titleRow(title,suffix){return '<div class="section-title"><h2>'+esc(title)+'</h2><span class="subtle">'+esc(suffix||"")+'</span></div>';}
+
+function home(){
+ return '<div class="library-hero"><div><span class="eyebrow">VOCABULARY</span><h1>Thư viện <span class="gradient">Unit.</span></h1><p class="subtle">Bài giảng · Bài tập mới</p></div><div class="library-decoration">Aa</div></div>'+
+ titleRow("Danh sách bài học",db.units.length+" Unit")+
+ '<div class="cards library-cards">'+db.units.map((u,i)=>'<button type="button" class="unit-card" data-select-unit="'+esc(u.id)+'"><div class="row between"><span class="unitnum">UNIT '+String(i+1).padStart(2,"0")+'</span><span class="badge '+(isPublished(u)?"good":"")+'">'+(isPublished(u)?"Đã xuất bản":"Chưa có bài")+'</span></div><h3>'+esc(u.title)+'</h3><div class="row between"><p>'+esc(u.topic)+'</p><span class="unit-arrow">↗</span></div></button>').join("")+'</div>';
+}
+
+
+function banner(u){
+ return '<div class="crumb"><button data-go="home">Thư viện</button> › '+esc(u.title)+'</div>'+
+ '<div class="unit-banner unit-banner-compact"><div><span class="eyebrow">VOCABULARY</span><h1>'+esc(u.title)+'</h1><p class="subtle">'+esc(u.topic)+'</p></div><span class="badge '+(isPublished(u)?"good":"")+'">'+(isPublished(u)?"Đã xuất bản":"Bản cấu trúc")+'</span></div>';
+}
+function sectionHeader(u,section){
+ return '<div class="crumb"><button data-go="home">Thư viện</button> › <button data-go="unit">'+esc(u.title)+'</button> › '+esc(section)+'</div>';
+}
+function choice(icon,title,subtitle,action){
+ return '<article class="choice-card study-choice"><span class="choice-icon">'+icon+'</span>'+
+ '<div class="choice-copy"><h3>'+title+'</h3><p>'+subtitle+'</p></div>'+
+ '<button class="btn primary choice-button" data-go="'+action+'">'+(action==="lesson"?"Đọc bài":"Làm bài")+' →</button></article>';
+}
+function unitPage(){
+ const u=current();
+ return banner(u)+'<div class="section-title"><h2>Nội dung học</h2><span class="subtle">02 lựa chọn</span></div>'+
+ '<div class="choice-grid study-choice-grid">'+
+ choice("▤","Bài giảng chi tiết","Nội dung đã học · Teacher Notes","lesson")+
+ choice("✎","Bài tập mới","10 câu A–D · 1 passage / 5 câu","practice")+'</div>';
+}
+
 function notes(u){const arr=u.lesson.notes;return arr.length?arr.map((n,i)=>'<div class="note"><strong style="display:block;color:#d6bcfa;font-size:11px;margin-bottom:7px">NOTE '+String(i+1).padStart(2,"0")+'</strong>'+br(n)+'</div>').join(""):blanks();}
+
 function lessonPage(){
  const u=current(),l=u.lesson;
- const tabs=[["lecture","Bài giảng"],["notes","Notes"]].map(([key,label])=>'<button class="tab '+(state.lessonTab===key?"active":"")+'" data-lesson-tab="'+key+'">'+label+'</button>').join("");
- let body=state.lessonTab==="notes"?
+ const tabs=[["lecture","Bài giảng"],["notes","Notes"]].map(([key,label])=>
+  '<button class="tab '+(state.lessonTab===key?"active":"")+'" data-lesson-tab="'+key+'">'+label+'</button>').join("");
+ const body=state.lessonTab==="notes"?
  '<div class="content-card"><div class="row between"><h3>Teacher Notes</h3><span class="badge">'+l.notes.length+' notes</span></div>'+notes(u)+'</div>':
- '<div class="content-card"><h3>Nội dung bài giảng</h3>'+(l.overview?'<div class="lecture-text">'+esc(l.overview)+'</div>':blanks())+'</div>'+
+ '<div class="content-card"><h3>Nội dung bài học</h3>'+(l.overview?'<div class="lecture-text">'+esc(l.overview)+'</div>':blanks())+'</div>'+
  '<div class="content-card"><h3>Kiến thức Vocabulary</h3>'+(l.sections.length?l.sections.map(s=>'<div class="note"><strong>'+esc(s.title)+'</strong><div style="margin-top:8px">'+br(s.content)+'</div></div>').join(""):blanks())+'</div>';
- return banner(u)+'<div class="content-grid"><div><div class="tabs">'+tabs+'</div>'+body+'</div><aside><div class="side-card"><h3>Học tập</h3><button class="btn primary block" data-go="practice">Làm bài tập →</button><button class="btn secondary block" data-print-open="lesson">In bài giảng ↓</button></div><div class="side-card"><h3>Trong bài này</h3><p class="subtle">Notes · '+l.notes.length+'<br>Mục kiến thức · '+l.sections.length+'</p></div></aside></div>';
+ return sectionHeader(u,"Bài giảng chi tiết")+
+ '<div class="row between top workspace-heading"><div><span class="eyebrow">OPTION 01</span><h2>Bài giảng chi tiết</h2></div>'+
+ '<button class="btn secondary small" data-print-open="lesson">▣ In bài giảng</button></div>'+
+ '<div class="content-grid study-content-grid"><div><div class="tabs">'+tabs+'</div>'+body+'</div>'+
+ '<aside class="content-aside"><div class="side-card"><h3>Nội dung</h3><p class="subtle">01 &nbsp; Bài giảng<br>02 &nbsp; Kiến thức<br>03 &nbsp; Notes</p></div>'+
+ '<div class="side-card"><h3>'+esc(u.title)+'</h3><p class="subtle">'+l.notes.length+' notes · '+l.sections.length+' mục</p></div></aside></div>';
 }
+
 function quizList(){return state.practicePart==="mcq"?newQ(current()):readQ(current());}
 function selectedKey(){return current().id+":"+state.practicePart+":"+state.qIndex;}
 function questionCard(q,i,total){
@@ -76,13 +135,21 @@ function questionCard(q,i,total){
  '<div class="row between" style="margin-top:22px"><button class="btn secondary" data-q-prev '+(i===0?"disabled":"")+'>← Trước</button><div class="row"><button class="btn secondary" data-submit>'+(!state.submitted?"Nộp bài":"Xem lại")+'</button><button class="btn primary" data-q-next '+(i>=total-1?"disabled":"")+'>Tiếp →</button></div></div></div>';
 }
 function quizPlaceholder(){return '<div class="content-card"><div class="quiz-head"><span class="badge">QUESTION 01</span><span class="quiz-count">A · B · C · D</span></div><div class="question" style="color:#b9c5d7">[Nội dung câu hỏi]</div><div class="answers">'+["A","B","C","D"].map(letter=>'<div class="answer"><span class="letter">'+letter+'</span><span class="muted">[Lựa chọn '+letter+']</span></div>').join("")+'</div></div>';}
+
 function practicePage(){
  const u=current(),part=state.practicePart,q=quizList(),reading=u.practice.reading;
- const t=[["mcq","10 câu trắc nghiệm"],["reading","Passage · 5 câu"]].map(([key,label])=>'<button class="tab '+(key===part?"active":"")+'" data-practice-tab="'+key+'">'+label+'</button>').join("");
- const partBody=part==="reading"?'<div class="content-card"><h3>'+esc(reading.title||"Reading Passage")+'</h3>'+(reading.passage?'<div class="passage">'+esc(reading.passage)+'</div>':blanks())+'</div>':"";
+ const tabs=[["mcq","10 câu A–D"],["reading","Passage · 5 câu"]].map(([key,label])=>
+  '<button class="tab '+(key===part?"active":"")+'" data-practice-tab="'+key+'">'+label+'</button>').join("");
+ const passage=part==="reading"?'<div class="content-card"><h3>'+esc(reading.title||"Reading Passage")+'</h3>'+(reading.passage?'<div class="passage">'+esc(reading.passage)+'</div>':blanks())+'</div>':"";
  const question=q.length?questionCard(q,Math.min(state.qIndex,q.length-1),q.length):quizPlaceholder();
- return banner(u)+'<div class="row between" style="margin-bottom:16px"><div><h2 style="margin:0">Bài tập mới</h2><div class="subtle">10 câu A–D + Passage 5 câu</div></div><button class="btn secondary small" data-print-open="practice">In bài tập ↓</button></div><div class="tabs">'+t+'</div><div style="max-width:900px;margin:auto">'+partBody+question+'</div>';
+ return sectionHeader(u,"Bài tập mới")+
+ '<div class="row between top workspace-heading"><div><span class="eyebrow">OPTION 02</span><h2>Bài tập mới</h2><p class="subtle">10 câu trắc nghiệm · Passage 5 câu</p></div>'+
+ '<button class="btn secondary small" data-print-open="practice">▣ In bài tập</button></div>'+
+ '<div class="tabs">'+tabs+'</div>'+
+ '<div class="content-grid study-content-grid"><div>'+passage+question+'</div>'+
+ '<aside class="content-aside"><div class="side-card"><h3>Tiến độ</h3><p class="subtle">Trắc nghiệm · '+newQ(u).length+'/10<br>Passage · '+readQ(u).length+'/5</p></div></aside></div>';
 }
+
 function printQuestions(questions,start=0){
  return questions.map((q,i)=>{const item=normalizeQ(q);return '<div class="print-question"><strong>'+(start+i+1)+'. '+esc(item.question||"[Nội dung câu hỏi]")+'</strong>'+item.options.map((x,j)=>'<span class="option">'+["A","B","C","D"][j]+'. '+esc(x||"[Lựa chọn]")+'</span>').join("")+'</div>';}).join("");
 }
