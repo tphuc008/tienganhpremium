@@ -196,3 +196,53 @@ select.field option{background:#112039;color:#f6f8fe}
  .study-choice .choice-copy h3{font-size:17px}
  .study-choice .choice-copy p{font-size:12px}
 }
+
+
+
+/* Unit 6: expanded lesson reader and explanations */
+.lesson-section{border:1px solid rgba(167,139,250,.18);border-radius:13px;margin:12px 0;background:rgba(255,255,255,.022);overflow:hidden}
+.lesson-section summary{display:flex;gap:11px;align-items:flex-start;cursor:pointer;padding:16px 17px;color:#eff3ff;font-weight:780;line-height:1.5;font-size:14px;list-style:none}
+.lesson-section summary::-webkit-details-marker{display:none}
+.lesson-section summary:after{content:"⌄";margin-left:auto;font-size:17px;flex-shrink:0;color:#9f90e9}
+.lesson-section[open] summary:after{content:"⌃"}
+.lesson-section[open] summary{border-bottom:1px solid rgba(167,139,250,.14);background:rgba(139,92,246,.085)}
+.lesson-section-body{padding:14px 18px 21px}
+.section-index{font-size:11px;color:#c6b3ff;background:rgba(139,92,246,.18);padding:4px 7px;border-radius:7px;white-space:nowrap}
+.note-index{color:#d6c2ff;font-size:10px;display:block;margin-bottom:6px;letter-spacing:.08em}
+.lesson-paragraph{font-size:14px;color:#d4e0f0;line-height:1.83;margin:5px 0 11px!important;overflow-wrap:anywhere}
+.lesson-paragraph strong,.lesson-bullet strong{color:#eef3ff}
+.lesson-paragraph em,.lesson-bullet em{color:#e5d5ff}
+.lesson-subheading{font-size:15px;color:#d7c5ff;margin:22px 0 10px;line-height:1.45}
+.lesson-bullet{font-size:14px;line-height:1.8;margin:8px 0 9px!important;padding-left:18px;position:relative;color:#d1deef;overflow-wrap:anywhere}
+.lesson-bullet:before{content:"•";position:absolute;left:1px;color:#ab90ff}
+.lesson-spacer{height:5px}
+.lesson-quote{border-left:3px solid #a78bfa;margin:14px 0;padding:10px 13px;background:rgba(139,92,246,.10);border-radius:0 7px 7px 0;color:#d2dbef;line-height:1.7}
+.lesson-rule{border:0;border-top:1px solid var(--line);margin:20px 0}
+.passage{white-space:normal}
+.passage .lesson-paragraph{margin:5px 0 12px}
+.explanation-panel{border-top:1px solid rgba(103,232,249,.20);padding-top:10px;margin-top:10px}
+.explanation-panel .lesson-paragraph,.explanation-panel .lesson-bullet{font-size:13px}
+.question u{text-decoration-thickness:1.5px;text-underline-offset:3px}
+.study-main .content-card h3{line-height:1.4}
+.paper .lesson-paragraph,.paper .lesson-bullet{color:#29394f!important;font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:1.63!important;margin:5px 0 7px!important}
+.paper .lesson-paragraph strong,.paper .lesson-bullet strong{color:#142539}
+.paper .lesson-paragraph em,.paper .lesson-bullet em{color:#394e68}
+.paper .lesson-bullet:before{color:#485b7b}
+.paper .lesson-subheading{font-size:13px;color:#273c5a;margin:17px 0 8px}
+.paper .lesson-quote{color:#354962;background:#f5f3ff}
+.paper .lesson-spacer{height:3px}
+.paper .print-lesson-section{margin-top:17px}
+.paper .print-lesson-section h3{margin:18px 0 9px}
+.paper .print-note{font-size:12px}
+.paper .answer-key{break-before:page}
+.paper .answer-key .explanation{white-space:normal}
+.paper .print-question{break-inside:avoid-page}
+.paper h4{color:#1e3559;font-size:14px;margin:14px 0 7px}
+@media print{
+ .paper .print-lesson-section{break-before:auto}
+ .paper .print-lesson-section h3,.paper h3,.paper h4{break-after:avoid}
+ .paper .print-question{break-inside:avoid-page}
+ .paper .answer-key{break-before:page}
+ .paper .lesson-subheading{break-after:avoid}
+ .paper .lesson-paragraph,.paper .lesson-bullet{orphans:3;widows:3}
+}
