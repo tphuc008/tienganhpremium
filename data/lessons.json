@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "units": [
+    {
+      "id": "unit-01",
+      "title": "Unit 01",
+      "topic": "Vocabulary",
+      "published": false,
+      "lesson": {
+        "overview": "",
+        "sections": [],
+        "notes": []
+      },
+      "practice": {
+        "mcq": [],
+        "reading": {
+          "title": "",
+          "passage": "",
+          "questions": []
+        }
+      }
+    },
+    {
+      "id": "unit-02",
+      "title": "Unit 02",
+      "topic": "Vocabulary",
+      "published": false,
+      "lesson": {
+        "overview": "",
+        "sections": [],
+        "notes": []
+      },
+      "practice": {
+        "mcq": [],
+        "reading": {
+          "title": "",
+          "passage": "",
+          "questions": []
+        }
+      }
+    }
+  ]
+}
