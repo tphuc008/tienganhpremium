@@ -57,7 +57,7 @@ function normalizeUnit(u,index){
 function normalizeDB(data){if(Array.isArray(data))data={units:data};if(!data||typeof data!=="object")throw Error("JSON không hợp lệ");if(!Array.isArray(data.units))throw Error('Thiếu trường "units"');if(!data.units.length)throw Error("Danh sách Unit đang trống");return {version:1,units:data.units.map(normalizeUnit)};}
 async function initialize(){
  try{const response=await fetch(DATA_URL,{cache:"no-store"});if(response.ok)db=normalizeDB(await response.json());}catch(e){console.warn("Load lessons failed",e);}
- try{const draft=localStorage.getItem(PREVIEW_KEY);if(draft){const local=normalizeDB(JSON.parse(draft));db=local;}}catch(e){console.warn("Preview data invalid",e);}
+ try{if(window.location.hash==="#admin"){const draft=localStorage.getItem(PREVIEW_KEY);if(draft){db=normalizeDB(JSON.parse(draft));}}}catch(e){console.warn("Preview data invalid",e);}
  const id=window.location.hash.slice(1);state.view=["home","unit","lesson","practice","print","admin"].includes(id)?id:"home";state.unitId=db.units[0]?.id;render();
 }
 
