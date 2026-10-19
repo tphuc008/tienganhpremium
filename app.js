@@ -169,7 +169,7 @@ function practicePage(){
  const tabs=[["mcq","Vocabulary · "+newQ(u).length+" câu"],["reading","Reading · "+readQ(u).length+" câu"]]
  .map(([key,label])=>'<button class="tab '+(key===part?"active":"")+'" data-practice-tab="'+key+'">'+label+'</button>').join("");
  const passage=part==="reading"?'<div class="content-card"><h3>'+esc(reading.title||"Reading Passage")+'</h3>'+(reading.passage?'<div class="passage">'+richText(reading.passage)+'</div>':blanks())+'</div>':"";
- const question=q.length?questionCard(q,Math.min(state.qIndex,q.length-1),q.length):quizPlaceholder();
+ const question=q.length?questionCard(q[Math.min(state.qIndex,q.length-1)],Math.min(state.qIndex,q.length-1),q.length):quizPlaceholder();
  return sectionHeader(u,"Bài tập mới")+
  '<div class="row between top workspace-heading"><div><span class="eyebrow">OPTION 02</span><h2>Bài tập mới</h2><p class="subtle">'+newQ(u).length+' câu Vocabulary · '+readQ(u).length+' câu Reading</p></div>'+
  '<button class="btn secondary small" data-print-open="practice">▣ In bài tập</button></div>'+
