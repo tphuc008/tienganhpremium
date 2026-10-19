@@ -57,8 +57,8 @@ function sidebar(){
  db.units.map((u,i)=>'<button type="button" class="side-link side-unit '+(u.id===state.unitId&&active!=="home"?"active-unit":"")+'" data-select-unit="'+esc(u.id)+'"><span class="side-number">'+String(i+1).padStart(2,"0")+'</span><span class="side-unit-title">'+esc(u.title)+'</span></button>').join("")+
  (active!=="home"?'<div class="side-divider"></div><div class="side-section-label">'+esc(current().title).toUpperCase()+'</div>'+
  '<button type="button" class="side-link '+(active==="unit"?"active":"")+'" data-go="unit"><span class="side-icon">◈</span> Tổng quan</button>'+
- '<button type="button" class="side-link '+(active==="lesson"?"active":"")+'" data-go="lesson"><span class="side-icon">▤</span> Bài giảng chi tiết</button>'+
- '<button type="button" class="side-link '+(active==="practice"?"active":"")+'" data-go="practice"><span class="side-icon">✎</span> Bài tập mới</button>':"")+
+ '<button type="button" class="side-link '+((active==="lesson"||(active==="print"&&state.printType==="lesson"))?"active":"")+'" data-go="lesson"><span class="side-icon">▤</span> Bài giảng chi tiết</button>'+
+ '<button type="button" class="side-link '+((active==="practice"||(active==="print"&&state.printType==="practice"))?"active":"")+'" data-go="practice"><span class="side-icon">✎</span> Bài tập mới</button>':"")+
  '</aside>';
 }
 function mobileContext(){
@@ -177,7 +177,7 @@ function draftText(){
 }
 function printPage(){
  const u=current(),draft=state.personalDraft;
- return '<div class="crumb"><button data-go="unit">Bài học</button> › In tài liệu</div><div class="row between" style="margin-bottom:20px"><div><span class="eyebrow">PRINT STUDIO</span><h2 style="margin:12px 0 4px">In & Xuất PDF</h2></div><span class="badge">'+esc(u.title)+'</span></div><div class="print-grid"><div class="control"><h3>Tùy chọn bản in</h3><div class="form-row"><label class="form-label" for="print-type">Loại tài liệu</label><select id="print-type" class="field"><option value="lesson" '+(state.printType==="lesson"?"selected":"")+'>Bài giảng chi tiết</option><option value="practice" '+(state.printType==="practice"?"selected":"")+'>Bài tập mới · 10 + 5</option></select></div>'+
+ return sectionHeader(u,"In tài liệu")+'<div class="row between" style="margin-bottom:20px"><div><span class="eyebrow">PRINT STUDIO</span><h2 style="margin:12px 0 4px">In & Xuất PDF</h2></div><span class="badge">'+esc(u.title)+'</span></div><div class="print-grid"><div class="control"><h3>Tùy chọn bản in</h3><div class="form-row"><label class="form-label" for="print-type">Loại tài liệu</label><select id="print-type" class="field"><option value="lesson" '+(state.printType==="lesson"?"selected":"")+'>Bài giảng chi tiết</option><option value="practice" '+(state.printType==="practice"?"selected":"")+'>Bài tập mới · 10 + 5</option></select></div>'+
  (state.printType==="lesson"?'<label class="checkline">Kèm Teacher Notes<input id="print-notes" type="checkbox" '+(state.printNotes?"checked":"")+'></label>':'<label class="checkline">Đáp án ở cuối file<input id="print-answers" type="checkbox" '+(state.printAnswers?"checked":"")+'></label>')+
  '<div style="height:19px"></div><button class="btn secondary block" data-edit-print>'+(draft?"Hoàn tất chỉnh sửa":"✎ Chỉnh sửa bản in")+'</button>'+
  (draft?'<div class="form-row"><label class="form-label" for="print-editor">Bản cá nhân</label><textarea class="field" id="print-editor" style="min-height:270px">'+esc(state.printText)+'</textarea><button class="btn secondary small" style="margin-top:10px" data-reset-print>Khôi phục</button></div>':"")+
