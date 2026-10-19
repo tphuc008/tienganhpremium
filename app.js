@@ -5,10 +5,27 @@ const DATA_URL="./data/lessons.json";
 const PREVIEW_KEY="tienganhpremium_structure_preview_v1";
 const esc=v=>String(v==null?"":v).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const br=v=>esc(v).replace(/\r?\n/g,"<br>");
+
+const richInline=value=>esc(value)
+ .replace(/&lt;u&gt;([\s\S]*?)&lt;\/u&gt;/gi,"<u>$1</u>")
+ .replace(/\*\*([^*\n]+)\*\*/g,"<strong>$1</strong>")
+ .replace(/(?<!\*)\*([^*\n]+)\*(?!\*)/g,"<em>$1</em>");
+function richText(content){
+ return String(content||"").replace(/\r/g,"").split("\n").map(line=>{
+  const v=line.trim();
+  if(!v)return '<div class="lesson-spacer"></div>';
+  if(/^#{2,5}\s+/.test(v))return '<h4 class="lesson-subheading">'+richInline(v.replace(/^#{2,5}\s+/,""))+'</h4>';
+  if(/^[-*]\s+/.test(v))return '<p class="lesson-bullet">'+richInline(v.replace(/^[-*]\s+/,""))+'</p>';
+  if(/^>\s+/.test(v))return '<blockquote class="lesson-quote">'+richInline(v.replace(/^>\s+/,""))+'</blockquote>';
+  if(/^---+$/.test(v))return '<hr class="lesson-rule">';
+  return '<p class="lesson-paragraph">'+richInline(v)+'</p>';
+ }).join("");
+}
+
 const blanks=()=>'<div class="placeholder" aria-label="Chưa có nội dung"><div class="bar lg"></div><div class="bar"></div><div class="bar md"></div><div class="bar sm"></div></div>';
 const fallback=()=>({version:1,units:[{id:"unit-01",title:"Unit 01",topic:"Vocabulary",published:false,lesson:{overview:"",sections:[],notes:[]},practice:{mcq:[],reading:{title:"",passage:"",questions:[]}}},{id:"unit-02",title:"Unit 02",topic:"Vocabulary",published:false,lesson:{overview:"",sections:[],notes:[]},practice:{mcq:[],reading:{title:"",passage:"",questions:[]}}}]});
 let db=fallback();
-const state={view:"home",unitId:"unit-01",lessonTab:"lecture",practicePart:"mcq",qIndex:0,answers:{},submitted:false,printType:"lesson",printNotes:true,printAnswers:true,personalDraft:false,printText:"",adminJSON:"",adminMessage:"",adminError:false};
+const state={view:"home",unitId:"unit-01",lessonTab:"lecture",practicePart:"mcq",qIndex:0,answers:{},submitted:false,printType:"lesson",printNotes:true,printAnswers:true,personalDraft:false,printOriginal:false,printText:"",adminJSON:"",adminMessage:"",adminError:false};
 const current=()=>db.units.find(u=>u.id===state.unitId)||db.units[0];
 const isPublished=u=>u.published===true;
 const newQ=u=>u.practice?.mcq||[];
@@ -19,7 +36,7 @@ const normalizeQ=q=>{
   options=options.slice(0,4);while(options.length<4)options.push("");
   const raw=String(q.answer||q.correct_answer||q.correctAnswer||"").trim().toUpperCase();
   const answer=/^[ABCD]$/.test(raw)?raw:/^[0-3]$/.test(raw)?"ABCD"[Number(raw)]:"";
-  return {question:String(q.question||q.text||q.prompt||""),options:options.map(x=>String(x??"")),answer,explanation:typeof q.explanation==="string"?q.explanation:JSON.stringify(q.explanation||"")};
+  return {question:String(q.question||q.text||q.prompt||""),options:options.map(x=>String(x??"")),answer,explanation:typeof q.explanation==="string"?q.explanation:JSON.stringify(q.explanation||""),part:String(q.part||"")};
 };
 function normalizeUnit(u,index){
  const lesson=u.lesson||{};
@@ -32,7 +49,8 @@ function normalizeUnit(u,index){
    title:String(u.title||"Unit "+String(index+1).padStart(2,"0")),
    topic:String(u.topic||"Vocabulary"),
    published:u.published===true,
-   lesson:{overview:String(lesson.overview||lesson.content||""),sections,notes},
+   sourceUrl:String(u.sourceUrl||""),sourceCommentsCount:Number(u.sourceCommentsCount||0),
+   lesson:{overview:String(lesson.overview||lesson.content||""),sections,notes,originalSolutions:Array.isArray(lesson.originalSolutions)?lesson.originalSolutions.map(v=>({title:String(v.title||""),content:String(v.content||"")})):[]},
    practice:{mcq:Array.isArray(p.mcq)?p.mcq.map(normalizeQ):[],reading:{title:String(r.title||""),passage:String(r.passage||""),questions:Array.isArray(r.questions)?r.questions.map(normalizeQ):[]}}
  };
 }
@@ -100,7 +118,7 @@ function unitPage(){
  return banner(u)+'<div class="section-title"><h2>Nội dung học</h2><span class="subtle">02 lựa chọn</span></div>'+
  '<div class="choice-grid study-choice-grid">'+
  choice("▤","Bài giảng chi tiết","Nội dung đã học · Teacher Notes","lesson")+
- choice("✎","Bài tập mới","10 câu A–D · 1 passage / 5 câu","practice")+'</div>';
+ choice("✎","Bài tập mới",(newQ(u).length||"10–20")+" câu A–D · Passage / 5 câu","practice")+'</div>';
 }
 
 function notes(u){const arr=u.lesson.notes;return arr.length?arr.map((n,i)=>'<div class="note"><strong style="display:block;color:#d6bcfa;font-size:11px;margin-bottom:7px">NOTE '+String(i+1).padStart(2,"0")+'</strong>'+br(n)+'</div>').join(""):blanks();}
@@ -130,8 +148,8 @@ function questionCard(q,i,total){
   const letter="ABCD"[j],cls=(choice===letter?" selected":"")+(state.submitted&&item.answer===letter?" correct":"")+(state.submitted&&choice===letter&&item.answer!==letter?" wrong":"");
   return '<button class="answer'+cls+'" data-answer="'+letter+'" '+(state.submitted?'disabled':"")+'><span class="letter">'+letter+'</span><span>'+esc(value)+'</span></button>';
  }).join("");
- return '<div class="content-card"><div class="quiz-head"><span class="badge">QUESTION '+String(i+1).padStart(2,"0")+' / '+total+'</span><span class="quiz-count">A · B · C · D</span></div><div class="track"><div class="track-fill" style="width:'+((i+1)/total*100)+'%"></div></div><div class="question">'+esc(item.question)+'</div><div class="answers">'+answers+'</div>'+
- (state.submitted?'<div class="notice" style="margin-top:15px"><strong class="'+(choice===item.answer?"result-good":"result-bad")+'">Đáp án: '+esc(item.answer||"—")+'</strong>'+(item.explanation?'<div style="white-space:pre-wrap;margin-top:8px">'+esc(item.explanation)+'</div>':"")+'</div>':"")+
+ return '<div class="content-card"><div class="quiz-head"><span class="badge">QUESTION '+String(i+1).padStart(2,"0")+' / '+total+'</span><span class="quiz-count">A · B · C · D</span></div><div class="track"><div class="track-fill" style="width:'+((i+1)/total*100)+'%"></div></div><div class="question">'+richInline(item.question)+'</div><div class="answers">'+answers+'</div>'+
+ (state.submitted?'<div class="notice" style="margin-top:15px"><strong class="'+(choice===item.answer?"result-good":"result-bad")+'">Đáp án: '+esc(item.answer||"—")+'</strong>'+(item.explanation?'<div class="explanation-panel">'+richText(item.explanation)+'</div>':"")+'</div>':"")+
  '<div class="row between" style="margin-top:22px"><button class="btn secondary" data-q-prev '+(i===0?"disabled":"")+'>← Trước</button><div class="row"><button class="btn secondary" data-submit>'+(!state.submitted?"Nộp bài":"Xem lại")+'</button><button class="btn primary" data-q-next '+(i>=total-1?"disabled":"")+'>Tiếp →</button></div></div></div>';
 }
 function quizPlaceholder(){return '<div class="content-card"><div class="quiz-head"><span class="badge">QUESTION 01</span><span class="quiz-count">A · B · C · D</span></div><div class="question" style="color:#b9c5d7">[Nội dung câu hỏi]</div><div class="answers">'+["A","B","C","D"].map(letter=>'<div class="answer"><span class="letter">'+letter+'</span><span class="muted">[Lựa chọn '+letter+']</span></div>').join("")+'</div></div>';}
@@ -151,7 +169,7 @@ function practicePage(){
 }
 
 function printQuestions(questions,start=0){
- return questions.map((q,i)=>{const item=normalizeQ(q);return '<div class="print-question"><strong>'+(start+i+1)+'. '+esc(item.question||"[Nội dung câu hỏi]")+'</strong>'+item.options.map((x,j)=>'<span class="option">'+["A","B","C","D"][j]+'. '+esc(x||"[Lựa chọn]")+'</span>').join("")+'</div>';}).join("");
+ return questions.map((q,i)=>{const item=normalizeQ(q);return '<div class="print-question"><strong>'+(start+i+1)+'. '+richInline(item.question||"[Nội dung câu hỏi]")+'</strong>'+item.options.map((x,j)=>'<span class="option">'+["A","B","C","D"][j]+'. '+esc(x||"[Lựa chọn]")+'</span>').join("")+'</div>';}).join("");
 }
 function printAnswers(questions,start=0){
  return questions.map((q,i)=>{const item=normalizeQ(q);return '<div class="print-question"><strong>'+(start+i+1)+'. '+esc(item.answer||"—")+'</strong>'+(item.explanation?'<div class="explanation">'+esc(item.explanation)+'</div>':"")+'</div>';}).join("");
@@ -168,10 +186,10 @@ function paperFromText(text){const u=current();return '<div class="paper"><span 
 function draftText(){
  const u=current(),l=u.lesson,p=u.practice;
  if(state.printType==="lesson")return [u.title,u.topic,"","BÀI GIẢNG CHI TIẾT",l.overview,...l.sections.map(s=>"\n"+s.title+"\n"+s.content),...(state.printNotes?["","TEACHER NOTES",...l.notes.map((n,i)=>(i+1)+". "+n)]:[])].join("\n");
- const all=[...p.mcq,...p.reading.questions];const lines=[u.title,u.topic,"","PHẦN I — 10 CÂU TRẮC NGHIỆM"];
+ const all=[...p.mcq,...p.reading.questions];const lines=[u.title,u.topic,"","PHẦN I — "+p.mcq.length+" CÂU VOCABULARY"];
  p.mcq.forEach((q,i)=>{q=normalizeQ(q);lines.push("\n"+(i+1)+". "+q.question);q.options.forEach((v,k)=>lines.push("   "+"ABCD"[k]+". "+v));});
  lines.push("","PHẦN II — READING PASSAGE",p.reading.passage);
- p.reading.questions.forEach((q,i)=>{q=normalizeQ(q);lines.push("\n"+(i+11)+". "+q.question);q.options.forEach((v,k)=>lines.push("   "+"ABCD"[k]+". "+v));});
+ p.reading.questions.forEach((q,i)=>{q=normalizeQ(q);lines.push("\n"+(i+p.mcq.length+1)+". "+q.question);q.options.forEach((v,k)=>lines.push("   "+"ABCD"[k]+". "+v));});
  if(state.printAnswers){lines.push("","ĐÁP ÁN & GIẢI THÍCH");all.forEach((q,i)=>{q=normalizeQ(q);lines.push((i+1)+". "+q.answer+(q.explanation?" — "+q.explanation:""));});}
  return lines.join("\n");
 }
@@ -202,7 +220,7 @@ function previewImport(){
  const raw=document.getElementById("import-json")?.value.trim()||"";state.adminJSON=raw;
  try{const data=normalizeDB(JSON.parse(raw));db=data;state.unitId=db.units[0].id;localStorage.setItem(PREVIEW_KEY,JSON.stringify(db));
  const u=current();const n=newQ(u).length,k=readQ(u).length;state.adminError=false;
- state.adminMessage="Đã lưu bản xem thử.\n"+db.units.length+" Unit · "+n+" câu A–D · "+k+" câu passage"+((n!==10||k!==5)?"\nGợi ý: bộ chuẩn gồm 10 câu A–D và 5 câu passage.":"");
+ state.adminMessage="Đã lưu bản xem thử.\n"+db.units.length+" Unit · "+n+" câu A–D · "+k+" câu passage"+((n<10||n>20||k!==5)?"\nGợi ý: bộ chuẩn gồm 10–20 câu A–D và 5 câu passage.":"");
  }catch(e){state.adminError=true;state.adminMessage=e.message||"Không đọc được JSON.";}render();
 }
 function downloadData(){
