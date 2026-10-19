@@ -163,18 +163,19 @@ function questionCard(q,i,total){
 }
 function quizPlaceholder(){return '<div class="content-card"><div class="quiz-head"><span class="badge">QUESTION 01</span><span class="quiz-count">A · B · C · D</span></div><div class="question" style="color:#b9c5d7">[Nội dung câu hỏi]</div><div class="answers">'+["A","B","C","D"].map(letter=>'<div class="answer"><span class="letter">'+letter+'</span><span class="muted">[Lựa chọn '+letter+']</span></div>').join("")+'</div></div>';}
 
+
 function practicePage(){
  const u=current(),part=state.practicePart,q=quizList(),reading=u.practice.reading;
- const tabs=[["mcq","10 câu A–D"],["reading","Passage · 5 câu"]].map(([key,label])=>
-  '<button class="tab '+(key===part?"active":"")+'" data-practice-tab="'+key+'">'+label+'</button>').join("");
- const passage=part==="reading"?'<div class="content-card"><h3>'+esc(reading.title||"Reading Passage")+'</h3>'+(reading.passage?'<div class="passage">'+esc(reading.passage)+'</div>':blanks())+'</div>':"";
+ const tabs=[["mcq","Vocabulary · "+newQ(u).length+" câu"],["reading","Reading · "+readQ(u).length+" câu"]]
+ .map(([key,label])=>'<button class="tab '+(key===part?"active":"")+'" data-practice-tab="'+key+'">'+label+'</button>').join("");
+ const passage=part==="reading"?'<div class="content-card"><h3>'+esc(reading.title||"Reading Passage")+'</h3>'+(reading.passage?'<div class="passage">'+richText(reading.passage)+'</div>':blanks())+'</div>':"";
  const question=q.length?questionCard(q,Math.min(state.qIndex,q.length-1),q.length):quizPlaceholder();
  return sectionHeader(u,"Bài tập mới")+
- '<div class="row between top workspace-heading"><div><span class="eyebrow">OPTION 02</span><h2>Bài tập mới</h2><p class="subtle">10 câu trắc nghiệm · Passage 5 câu</p></div>'+
+ '<div class="row between top workspace-heading"><div><span class="eyebrow">OPTION 02</span><h2>Bài tập mới</h2><p class="subtle">'+newQ(u).length+' câu Vocabulary · '+readQ(u).length+' câu Reading</p></div>'+
  '<button class="btn secondary small" data-print-open="practice">▣ In bài tập</button></div>'+
  '<div class="tabs">'+tabs+'</div>'+
  '<div class="content-grid study-content-grid"><div>'+passage+question+'</div>'+
- '<aside class="content-aside"><div class="side-card"><h3>Tiến độ</h3><p class="subtle">Trắc nghiệm · '+newQ(u).length+'/10<br>Passage · '+readQ(u).length+'/5</p></div></aside></div>';
+ '<aside class="content-aside"><div class="side-card"><h3>Phân bổ</h3><p class="subtle">Vocabulary · '+newQ(u).length+' câu<br>Reading · '+readQ(u).length+' câu</p></div></aside></div>';
 }
 
 function printQuestions(questions,start=0){
