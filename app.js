@@ -157,7 +157,9 @@ function questionCard(q,i,total){
   const letter="ABCD"[j],cls=(choice===letter?" selected":"")+(state.submitted&&item.answer===letter?" correct":"")+(state.submitted&&choice===letter&&item.answer!==letter?" wrong":"");
   return '<button class="answer'+cls+'" data-answer="'+letter+'" '+(state.submitted?'disabled':"")+'><span class="letter">'+letter+'</span><span>'+esc(value)+'</span></button>';
  }).join("");
- return '<div class="content-card"><div class="quiz-head"><span class="badge">QUESTION '+String(i+1).padStart(2,"0")+' / '+total+'</span><span class="quiz-count">A · B · C · D</span></div><div class="track"><div class="track-fill" style="width:'+((i+1)/total*100)+'%"></div></div><div class="question">'+richInline(item.question)+'</div><div class="answers">'+answers+'</div>'+
+ const displayNumber=state.practicePart==="reading"?newQ(current()).length+i+1:i+1;
+ const displayTotal=state.practicePart==="reading"?newQ(current()).length+total:total;
+ return '<div class="content-card"><div class="quiz-head"><span class="badge">QUESTION '+String(displayNumber).padStart(2,"0")+' / '+displayTotal+'</span><span class="quiz-count">'+esc(item.part||"A · B · C · D")+'</span></div><div class="track"><div class="track-fill" style="width:'+((i+1)/total*100)+'%"></div></div><div class="question">'+richInline(item.question)+'</div><div class="answers">'+answers+'</div>'+
  (state.submitted?'<div class="notice" style="margin-top:15px"><strong class="'+(choice===item.answer?"result-good":"result-bad")+'">Đáp án: '+esc(item.answer||"—")+'</strong>'+(item.explanation?'<div class="explanation-panel">'+richText(item.explanation)+'</div>':"")+'</div>':"")+
  '<div class="row between" style="margin-top:22px"><button class="btn secondary" data-q-prev '+(i===0?"disabled":"")+'>← Trước</button><div class="row"><button class="btn secondary" data-submit>'+(!state.submitted?"Nộp bài":"Xem lại")+'</button><button class="btn primary" data-q-next '+(i>=total-1?"disabled":"")+'>Tiếp →</button></div></div></div>';
 }
