@@ -2,40 +2,369 @@
   "version": 1,
   "units": [
     {
-      "id": "unit-01",
-      "title": "Unit 01",
-      "topic": "Vocabulary",
-      "published": false,
+      "id": "unit-06",
+      "title": "Unit 6",
+      "topic": "Artificial Intelligence",
+      "published": true,
+      "sourceUrl": "https://docs.google.com/document/d/1TMzhWxppebT-1pB54z_XLtqwB44ONA16kPCuhr3WVwo/edit?tab=t.0",
+      "sourceCommentsCount": 71,
       "lesson": {
-        "overview": "",
-        "sections": [],
-        "notes": []
+        "overview": "Bài giảng tổng hợp Unit 6, tập trung vào các từ dễ nhầm, collocations, word families và cách dùng trong ngữ cảnh thực tế. Các nội dung trong Teacher Notes đã được kiểm tra và chỉnh những chỗ chưa chính xác.",
+        "sections": [
+          {
+            "title": "Truthful, honest, reliable, realistic, practical: không đồng nghĩa",
+            "content": "### truthful — nói đúng sự thật\n\n*Truthful* mô tả một người phát biểu đúng những gì họ tin là thật, hoặc một lời kể/thông tin đúng sự thật. Đối lập thông dụng là *untruthful*. Ở một số ngữ cảnh, *truthful* và *honest* có thể thay thế, nhưng trọng tâm không luôn giống nhau.\n\n- *The witness gave a truthful account of the incident.* — Lời kể phản ánh đúng sự việc.\n- Word family: *truth → truthful → truthfully; untruthful → untruthfully*.\n\n### honest — trung thực, không cố tình lừa dối\n\n*Honest* thường nhấn mạnh thiện chí nói thật hoặc không che giấu. Một người có thể **honest but mistaken** (thành thật nhưng nhớ sai). Trái lại, một thông tin **truthful** thường được đánh giá theo nội dung đúng sự thật. Đừng biến đây thành luật tuyệt đối rằng *truthful* chỉ dùng cho dữ liệu và *honest* chỉ dùng cho người.\n\n- *She gave an honest answer, but her recollection of the date was incorrect.*\n\n### reliable — đáng tin cậy, có thể dựa vào\n\nMột nguồn tin hoặc hệ thống được gọi là *reliable* khi nó có khả năng cung cấp kết quả chính xác, ổn định và có thể tin cậy trong những lần sử dụng liên quan. Một bức ảnh AI có thể *realistic* nhưng không *reliable* như bằng chứng lịch sử.\n\n- *The model's summary sounded convincing, but the citations were not reliable.*\n- Word family: *rely → reliable / unreliable → reliably / unreliably → reliability / unreliability*.\n\n### realistic — thực tế, khả thi hoặc giống thật\n\nTừ này có **hai cách dùng** quan trọng: (a) kế hoạch có khả năng thực hiện với điều kiện hiện có; (b) hình ảnh/mô phỏng trông giống đời thực. Nó không đồng nghĩa với *reliable*.\n\n- *Replacing every teacher with AI next month is not a realistic plan.* — Thiếu điều kiện để thực hiện.\n- *The synthetic voice sounded remarkably realistic.* — Nghe rất giống thật, không chứng minh người thật đã nói.\n- Word family: *real → realistic → realistically → reality*.\n\n### practical — mang tính thực hành, hữu dụng trong thực tế\n\n*Practical experience* là kinh nghiệm thực hành; *practical solution* là giải pháp có thể áp dụng hữu hiệu; *practicality* thường nói đến tính khả thi hoặc mức độ có ích khi triển khai. Đối lập phổ biến trong học thuật là *theoretical*. \n\n- *Students need practical experience with AI tools, not just theoretical knowledge.*\n- *We must assess the practicality of the proposal before investing.*\n\n**Quy tắc so sánh:** *truthful* (đúng sự thật), *honest* (không cố ý lừa dối), *reliable* (đáng tin khi dùng), *realistic* (khả thi/giống thật), *practical* (hữu ích/có thể áp dụng). Mỗi từ trả lời một câu hỏi khác nhau."
+          },
+          {
+            "title": "Career development, career advancement, employment",
+            "content": "- **Career development:** quá trình xây dựng năng lực, kinh nghiệm, định hướng nghề nghiệp trong dài hạn; không đòi hỏi phải được thăng chức. *Mentoring supports career development even without an immediate promotion.*\n- **Career advancement:** tiến lên một vị trí, cấp bậc, phạm vi trách nhiệm hoặc địa vị cao hơn. *An internal promotion offers a clear opportunity for career advancement.*\n- **Unemployed:** hiện không có việc làm, không có nghĩa là không có năng lực. *He is unemployed while looking for a new role.*\n- **Unemployable:** khó được tuyển dụng vì không đáp ứng kỹ năng/điều kiện cần thiết (từ mạnh, dễ mang tính đánh giá; cần dùng thận trọng). *Without up-to-date technical skills, some applicants may become less employable.*\n- **Retire (v) → retirement (n) → retiree (n):** nghỉ hưu, sự nghỉ hưu, người nghỉ hưu.\n- **Settle (v) → settlement (n) → settler (n):** tùy ngữ cảnh là ổn định/định cư, đạt thỏa thuận giải quyết tranh chấp, hoặc thanh toán. *Settle a bill* = thanh toán hóa đơn; *reach a settlement* = đi đến thỏa thuận giải quyết.\n- **Development word family:** *develop (v) → development (n) → developed / developing (adj).* *Developed* và *developing* khi nói về quốc gia cần dùng theo phân loại và ngữ cảnh cụ thể, không như nhãn tuyệt đối.\n\n**Bẫy:** Câu hỏi về *mentoring, training, skills* thường hướng đến *development*; câu hỏi về *promotion, climbing the ranks* thường hướng đến *advancement*.\n\n### Industry và industrious\n\n- *Industry* thường là **ngành công nghiệp**, nhưng trong văn viết trang trọng cũng có thể mang nghĩa **sự cần cù/chăm chỉ**. *Her industry and patience helped her master the new system.* Nghĩa này ít gặp hơn trong giao tiếp thông thường.\n- *Industrial* = thuộc công nghiệp; *industrialise / industrialize* = công nghiệp hóa; *industrialisation / industrialization* = sự công nghiệp hóa.\n- *Industrious (adj)* = chăm chỉ, cần cù. *The industrious student revised her notes every evening.* Đừng nhầm với *industrial* (thuộc công nghiệp)."
+          },
+          {
+            "title": "Standard, standardise, prompt, memory",
+            "content": "### standard / standardised / standardise / standardisation\n\n- *Standard (n/adj):* tiêu chuẩn hoặc thuộc loại thông thường/được xem là chuẩn.\n- *Standardise (BrE) / standardize (AmE):* chuẩn hóa một quy trình để mọi đối tượng tuân theo tiêu chí chung.\n- *Standardised (BrE) / standardized (AmE):* đã được chuẩn hóa. *A standardised assessment uses the same scoring criteria for all candidates.*\n- *Standardisation (n):* quá trình chuẩn hóa.\n\nLưu ý: *a standard assessment system* và *a standardised assessment system* **đôi khi đều chấp nhận được**. Nếu muốn ra một câu hỏi duy nhất chọn *standardised*, ngữ cảnh phải nhấn mạnh việc **áp dụng cùng một quy trình và thang điểm một cách nhất quán**, và không nên đặt *standard* làm phương án nhiễu nếu nó vẫn đúng.\n\n### prompt có ba loại từ quan trọng\n\n- *Prompt (n):* câu lệnh/yêu cầu đầu vào cho mô hình. *A precise prompt can specify the intended audience and the required format.*\n- *Prompt (v):* thúc đẩy, khiến ai đó phản ứng hoặc hành động; mẫu: **prompt somebody to do something**. *The security warning prompted the manager to change the password policy.*\n- *Prompt (adj):* nhanh chóng, đúng lúc, không trì hoãn. *The support team provided a prompt response.*\n- *Promptly (adv):* ngay lập tức, kịp thời.\n\n### memory / memorise / memorisation\n\n- *Memory (n)* là trí nhớ hoặc ký ức; *memorise (v, BrE)* = học thuộc; *memorisation (n)* = sự ghi nhớ bằng cách học thuộc.\n- *Memorable (adj)* = đáng nhớ, không có nghĩa là *đã học thuộc*.\n- *Mechanical memorisation may help recall definitions without guaranteeing deep understanding.*"
+          },
+          {
+            "title": "Straightforward, easy, challenging, difficult, complicated, accessible",
+            "content": "- **Straightforward:** rõ ràng, trực tiếp, không nhiều bước hoặc quy tắc rắc rối. Một quy trình có thể straightforward nhưng vẫn tốn công thực hiện. *The registration steps are straightforward, although verifying an identity may take time.*\n- **Easy:** không đòi hỏi nhiều nỗ lực/kỹ năng. *The questions are easy for experienced programmers.*\n- **Challenging:** gây thử thách; có thể hàm ý thú vị/kích thích tư duy, nhưng **không phải lúc nào cũng tích cực**. *The project was challenging but rewarding.*\n- **Difficult:** khó khăn nói chung; cũng có thể mô tả một thử thách đáng giá, nên không thể chỉ dựa vào sắc thái để loại nó.\n- **Complicated:** có nhiều yếu tố/bước/quy tắc khiến điều gì khó hiểu hoặc khó xử lý. *The instructions became complicated after several exceptions were added.*\n- **Complicate (v) → complication (n):** làm phức tạp; vấn đề phát sinh/phức tạp, hoặc biến chứng trong y tế. *Bad weather caused further complications for the rescue team.*\n- **Accessible (adj) / inaccessible (adj):** có thể/không thể tiếp cận hoặc sử dụng; *accessibility / inaccessibility (n)*. *Subtitles can make videos more accessible to viewers with hearing difficulties.*\n- **Confused / puzzled / perplexed:** bối rối; *perplexed* thường nhấn mạnh sự khó hiểu, không thể lý giải điều đang xảy ra. *The contradictory model outputs left reviewers perplexed.*\n\n**Phân biệt thực tế:** Một bài hướng dẫn *straightforward* là ít rắc rối; một nhiệm vụ *easy* là không cần nhiều nỗ lực; một nhiệm vụ *challenging* đòi hỏi năng lực nhưng có thể đáng làm; một quy trình *complicated* có nhiều điểm rối."
+          },
+          {
+            "title": "Company, companion, familial, communal, befriend",
+            "content": "### company không chỉ nghĩa là doanh nghiệp\n\n- *Company (n)* = doanh nghiệp **hoặc** sự hiện diện/đồng hành của một người. *I enjoy my grandfather's company.*\n- *Companionship (n)* = cảm giác có người đồng hành, kết nối và không cô độc.\n- *Accompany somebody* = đi cùng ai (không dùng **accompany with somebody** ở cấu trúc chủ động này). *A teacher accompanied the class on the field trip.*\n- *Companion (n)* = người/vật đồng hành; *companionable (adj)* = dễ chịu, thích hợp để bầu bạn. *She is quiet but companionable.*\n\n### family, familial, familiar\n\n- *Family* là danh từ, cũng dùng bổ nghĩa như *family relationships*.\n- *Familial (adj)* = thuộc về/gắn với gia đình, ví dụ *familial ties*, *familial responsibilities*.\n- *Familiar (adj)* = quen thuộc; không có nghĩa là *gia đình* (*a familiar face* là gương mặt quen).\n\n### community / communal / befriend\n\n- *Community (n)* = cộng đồng. *Communal (adj)* = của chung, dùng chung, thuộc cộng đồng. *A communal garden is shared by residents.*\n- **Befriend somebody** = kết bạn với ai. Lưu ý sửa comment gốc: *I befriended several classmates*, **không dùng** *I befriended with several classmates*.\n- *Friendly / unfriendly* = thân thiện / không thân thiện; *friendliness* = sự thân thiện.\n- *Connectivity* = khả năng kết nối giữa người, thiết bị hoặc mạng; *social connectivity* nhấn khả năng duy trì liên hệ chứ không đồng nghĩa hoàn toàn với cảm giác gắn bó tình cảm.\n- *Happy → happily → happiness*; *joy → joyful / joyless*. *Joyless* = thiếu niềm vui, không hoàn toàn đồng nghĩa với *sad* trong mọi ngữ cảnh."
+          },
+          {
+            "title": "Satisfaction và các tính từ dễ nhầm",
+            "content": "- *Satisfaction (n)* = sự hài lòng; *life satisfaction* = mức độ hài lòng với cuộc sống.\n- *Satisfying (adj)* = mang đến cảm giác hài lòng, mãn nguyện. *Solving a difficult problem can be satisfying.*\n- *Satisfactory (adj)* = đạt yêu cầu / đủ tốt theo tiêu chuẩn đang xét. **Không nhất thiết** mang nghĩa tiêu cực hoặc 'tàm tạm' trong mọi ngữ cảnh. *The inspection results were satisfactory.*\n- *Pleasurable (adj)* = đem lại niềm vui hoặc cảm giác dễ chịu, không phải cách thay thế tự động cho *satisfying*.\n- *Monotonous (adj)* = đều đều, lặp lại đến mức nhàm chán; thường tiêu cực hơn *repetitive*, vốn chỉ đơn thuần chỉ sự lặp lại."
+          },
+          {
+            "title": "Automatic, automated, autonomous: ba khái niệm riêng",
+            "content": "- **Automatic:** vận hành tự động khi thỏa điều kiện/có tín hiệu, ít hoặc không cần tác động trực tiếp trong quá trình hoạt động. *An automatic door opens when its sensor detects movement.*\n- **Automated:** một quy trình trước đây có thể do con người làm, nay được thực hiện chủ yếu bằng máy hoặc hệ thống điều khiển. *The factory automated its packaging process.* *The packaging process has been automated.*\n- **Autonomous:** có khả năng tự thực hiện quyết định hoặc kiểm soát hoạt động trong phạm vi thiết kế mà không cần con người chỉ đạo từng bước. *An autonomous robot can adjust its route around obstacles.*\n\nMẹo nhớ trong comment dùng “có IQ / không có IQ” nhưng đó chỉ là phép ví von, **không phải định nghĩa kỹ thuật**. Một hệ thống *automated* có thể dùng AI; một thiết bị *autonomous* vẫn có thể hoạt động theo thuật toán chứ không có ý thức hay suy nghĩ như người.\n\n- *Automation (n)* = sự tự động hóa; *automate (v)* = tự động hóa; *automated (adj/participle)* = đã được tự động hóa.\n- *Self-driving* mô tả phương tiện có hệ thống tự lái ở mức độ nhất định; không phải mọi phương tiện gắn nhãn này đều tự chủ hoàn toàn trong tất cả điều kiện."
+          },
+          {
+            "title": "Deploy, integrate, adapt, standardise, sophisticated",
+            "content": "- **Deploy** = đưa công cụ/nguồn lực vào sử dụng ở địa điểm hoặc nhiệm vụ cụ thể. *The hospital deployed a model to help screen medical images.* Cũng dùng *deploy troops*. *Deployment (n).* \n- **Use** là dùng nói chung; **utilise** (BrE) là sử dụng/tận dụng cho một mục đích. Không nên dạy rằng *utilise* luôn tích cực còn *use* trung tính: sắc thái phần lớn do cả cụm từ và ngữ cảnh quyết định.\n- **Integrate A into B** = tích hợp A vào một hệ thống/quy trình B. *The school integrated AI tools into its feedback system.* Phân biệt với *deploy*: có thể triển khai một công cụ mà chưa tích hợp sâu vào hệ thống cũ.\n- **Promote** = thúc đẩy hoặc quảng bá. *Promote responsible AI adoption* = thúc đẩy ứng dụng AI có trách nhiệm; *promote a product* = quảng bá; *promote an employee* = thăng chức.\n- **Adapt (v)** = thích nghi/điều chỉnh; **adaptable** = có khả năng thích nghi; **adaptive** = tự thay đổi cách vận hành/phản ứng để thích ứng. Ví dụ: *adaptable employees* và *adaptive learning software*. Đây là sự khác nhau về trọng tâm, không phải quy tắc rằng chỉ máy mới “adaptive”.\n- **Sophisticated** = tinh vi, phức tạp và phát triển ở trình độ cao; **highly sophisticated** = cực kỳ tinh vi. **Primitive** = sơ khai, thô sơ. Cặp đối lập sẽ phụ thuộc tiêu chí: *primitive* ↔ *sophisticated/advanced*.\n- **Algorithm** = tập hợp bước/quy tắc tính toán/xử lý, không nhất thiết phải là AI. Thuật toán gợi ý có thể dựa trên *user preferences* để đưa ra *personalised / customized recommendations*. Hai từ *personalised* và *customized* thường gần nghĩa nhưng không luôn đồng nhất về phương thức cá nhân hóa.\n- **Instantly / immediately / instantaneously / without delay / in no time:** đều diễn đạt tính nhanh/ngay lập tức ở các mức độ trang trọng khác nhau; *instantaneously* trang trọng hơn và thường xuất hiện trong văn viết kỹ thuật.\n- *Visual recognition* = nhận dạng hình ảnh/đối tượng; *facial recognition* = nhận diện khuôn mặt, một trường hợp chuyên biệt."
+          },
+          {
+            "title": "Data ethics: verify, validate, accuse, punish, violate",
+            "content": "- **Verify (v)** = xác minh thông tin có đúng, có khớp với bằng chứng nguồn hay không. *Verify a claim against official records*.\n- **Validate (v)** = xác nhận dữ liệu, phương pháp hoặc mô hình đáp ứng một mục đích/tiêu chí nhất định. Có vùng giao thoa với *verify*; trong quản trị AI, *model validation* có thể bao gồm kiểm tra dữ liệu và hiệu năng bằng quy trình độc lập.\n- **Fact-check** = kiểm tra tính đúng/sai của tuyên bố thực tế qua bằng chứng. *Fact-check a viral story before sharing it.*\n- **Accuse somebody of something / doing something** = cáo buộc ai về hành vi nào. *The employee was accused of leaking customer records.* Đây chưa phải kết luận người đó có tội.\n- **Punish somebody for doing something** = trừng phạt ai vì đã thực hiện hành vi. *The company punished staff for deliberately sharing passwords.*\n- **Violation (n)** = sự vi phạm quy định/quyền; *privacy violation*, *data protection violation*. \n- **Offender / violator / perpetrator / culprit:** đều có thể chỉ người vi phạm/người gây ra việc xấu, nhưng không hoàn toàn đồng nghĩa. *Perpetrator* thường dùng với tội phạm/hành vi nghiêm trọng; *culprit* là người/thứ chịu trách nhiệm gây ra sự cố; *offender* là người vi phạm luật/quy định; *violator* nêu hành vi vi phạm một điều luật/quy tắc.\n- **Victim / casualty / fatality:** *victim* = nạn nhân; *casualty* thường là người bị thương hoặc tử vong trong chiến tranh/tai nạn, đôi khi là thiệt hại nói chung; *fatality* là một trường hợp tử vong. **Không đồng nhất casualty với fatality**.\n- **Threaten to do something:** đe dọa sẽ làm gì. *The attacker threatened to release the files.*\n- *Attack (n/v)* = cuộc tấn công / tấn công; *warn (v)* = cảnh báo, *warning (n/adj modifier)* = lời cảnh báo / mang tính cảnh báo. *A security warning about possible cyberattacks.* Không suy từ việc một từ được ghi chú là danh từ trong một câu rằng nó chỉ có đúng một từ loại."
+          },
+          {
+            "title": "Invasion, intrusion, infiltration: không đánh đồng",
+            "content": "- **Invasion:** xâm lược/xâm nhập với quy mô lớn hoặc mang tính can thiệp sâu. *An invasion of privacy* cũng là collocation rất thông dụng trong nghĩa xâm phạm quyền riêng tư.\n- **Intrusion:** sự xâm nhập/xen vào ngoài ý muốn, ví dụ *an intrusion into someone's private life* hoặc *a network intrusion*.\n- **Infiltration:** sự thâm nhập kín đáo, từng bước, hòa lẫn vào hệ thống/nhóm để khó bị phát hiện. *The attackers' gradual infiltration of the network went unnoticed.*\n\n**Phân biệt ngữ cảnh:** nếu nói đến việc lén đưa tài khoản độc hại vào mạng nội bộ qua nhiều giai đoạn, *infiltration* chính xác hơn *invasion*; nhưng trong ngôn ngữ thực tế, các khái niệm có thể chồng lấn và phải dựa vào dấu hiệu cụ thể."
+          },
+          {
+            "title": "Information overload, overwhelm, reliance, impairment",
+            "content": "- **Overwhelm somebody with something** = khiến ai đó bị quá tải/ngập trong điều gì. *The app overwhelmed users with notifications.*\n- **Information overload** = tình trạng lượng thông tin vượt quá khả năng tiếp nhận/xử lý hữu hiệu, thường dẫn đến khó tập trung hoặc ra quyết định.\n- **Impair someone's ability to do something** = làm suy giảm khả năng. *Sleep deprivation can impair a student's ability to concentrate.* *Hearing impairment*, *visual impairment* (n) = suy giảm thính lực/thị lực.\n- **Struggle with something** = gặp khó khăn khi xử lý/đối mặt với điều gì. *Some users struggle with unfamiliar interfaces.*\n- **Over-dependence / over-reliance** = phụ thuộc quá mức. Word family: *rely → reliant → reliance*; *depend → dependent → dependence/dependency*. Các danh từ có sự khác nhau theo ngữ cảnh, không thay thế máy móc.\n- **Sedentary** = ít vận động (đặc biệt tư thế ngồi); **indolent** = lười biếng, không muốn nỗ lực. Một người làm công việc *sedentary* vẫn có thể rất chăm chỉ và tập thể dục sau giờ làm.\n- **Urgent (adj) → urgency (n)**; *an urgent security alert*; *a sense of urgency*.\n- **Lack of focus** = sự thiếu tập trung; *focus on* = tập trung vào."
+          },
+          {
+            "title": "Multinational, domestic, provincial, mediocre",
+            "content": "- **Domestic (adj)** = trong nước/nội địa hoặc thuộc gia đình tùy ngữ cảnh (*domestic market; domestic chores*).\n- **Multinational (adj/n)** = hoạt động ở nhiều quốc gia (*a multinational company*). Một công ty đa quốc gia vẫn có thể có hoạt động nội địa; vì vậy không phải mọi câu đều coi hai từ này là trái nghĩa trực tiếp tuyệt đối.\n- **Provincial (adj)** = thuộc tỉnh/vùng; đôi khi mang nghĩa bóng là hạn hẹp trong quan điểm (cần ngữ cảnh). *Province (n) → provincial (adj).* \n- **Mediocre** = ở mức trung bình thấp, thường hàm ý đánh giá không tốt/không nổi bật. **Average** = trung bình, bản thân từ này thường trung tính hơn. *The service was mediocre despite the company's expensive advertising.*\n- **Employ / hire** = thuê/tuyển dụng (không phải lúc nào cũng thay thế trong mọi cấu trúc)."
+          },
+          {
+            "title": "Costs, prices, deficits, time và tính chính xác",
+            "content": "- **Cost** = chi phí/bỏ ra để sản xuất, thực hiện hoặc có được điều gì; **price** = số tiền được định giá/thu khi bán. Không nên định nghĩa *cost* chỉ là tiền 'làm ra' và *price* chỉ là tiền 'sở hữu': người mua cũng có thể nói *the cost of a laptop*, còn doanh nghiệp có thể nói *price of a service*.\n- *Cut costs* = cắt giảm chi phí. *The manufacturer cut labour costs by automating repetitive tasks.*\n- **Deficit (n)** = phần thiếu hụt (ngân sách, thương mại, kỹ năng, sự chú ý...); **deficient in (adj)** = thiếu một chất/kỹ năng cần thiết; *insufficient / inadequate* = không đủ/không đạt yêu cầu.\n- **Outdated / outmoded / obsolete / old-fashioned:** cùng trường nghĩa 'lỗi thời' nhưng mức độ khác nhau. *Obsolete* thường cho biết không còn được sử dụng/phù hợp vì đã có giải pháp mới; *outdated* = không cập nhật; *old-fashioned* có thể chỉ phong cách; *outmoded* nhấn mạnh đã bị xu hướng/chuẩn mới vượt qua.\n- **Stay up to date with something** hoặc **stay updated on something**. Comment *stay updated for = stay up to date with* không phải phép thay thế hoàn toàn. Trong ngữ cảnh thông báo ra mắt sản phẩm, tự nhiên hơn là *Stay tuned for upcoming updates*."
+          },
+          {
+            "title": "Reading: Hybrid FOMO và personalisation",
+            "content": "### Hybrid FOMO\n\nTài liệu đầu dùng *hybrid FOMO* như cách gọi nỗi lo tụt hậu khi những người khác áp dụng AI nhanh hơn. Dấu hiệu quan trọng trong passage là sự đối lập giữa tốc độ máy và quyền phán đoán của con người. Kiến thức trọng tâm: *feel unsure*, *share tips*, *work with AI*, *exercise critical thinking*, *human competence*, *steer one's life*. Từ *trade tips* cũng có thể dùng tự nhiên; nếu bài chọn *share*, phải nhìn lựa chọn và mục đích kiểm tra để tránh bẫy mơ hồ.\n\n### Smarter Personalization, Greater Responsibility\n\nĐoạn cuối kiểm tra: *sophisticated systems; user preferences; customised recommendations; process information instantaneously; integrate reliable data sources; conduct validation*. Luận điểm là **tốc độ và cá nhân hóa không tự động chứng minh độ tin cậy**; cần dữ liệu tốt, thử nghiệm có kiểm soát và biện pháp bảo vệ quyền riêng tư.\n\n---"
+          }
+        ],
+        "notes": [
+          "Truthful ≠ honest: truthful nhấn thông tin đúng sự thật; honest nhấn thái độ trung thực, không cố tình đánh lừa.",
+          "Reliable ≠ realistic: reliable là đáng tin cậy; realistic có thể là giống thật hoặc khả thi.",
+          "Career development tập trung vào phát triển năng lực; career advancement nhấn sự thăng tiến.",
+          "Standardised assessment dùng quy trình và tiêu chí đánh giá nhất quán.",
+          "Straightforward là rõ ràng, ít bước phức tạp; easy nhấn ít nỗ lực.",
+          "Challenging không luôn tích cực và difficult không luôn tiêu cực; xét ngữ cảnh.",
+          "Befriend somebody (không dùng befriend with somebody).",
+          "Satisfying = đem lại cảm giác hài lòng; satisfactory = đạt tiêu chuẩn mong đợi.",
+          "Automatic phản ứng theo cơ chế tự động; automated nhấn quy trình được tự động hóa; autonomous có mức độ tự quyết trong phạm vi thiết kế.",
+          "Deploy a system = triển khai; integrate A into B = tích hợp A vào B.",
+          "Overwhelm somebody with something; impair someone's ability; struggle with something.",
+          "An invasion of privacy, a network intrusion, covert infiltration: khác phạm vi và cách thức xâm nhập.",
+          "Indolent = lười biếng; sedentary = ít vận động; monotonous = đơn điệu, nhàm chán.",
+          "Outdated, outmoded và obsolete đều nói đến sự lỗi thời nhưng không đồng nhất về mức độ.",
+          "Validate model predictions khác với verify a factual claim; đều cần bằng chứng phù hợp.",
+          "Casualty không tự động có nghĩa là fatality; phân biệt nạn nhân với trường hợp tử vong."
+        ],
+        "originalSolutions": [
+          {
+            "title": "Questions 1–24: Vocabulary in Context",
+            "content": "1. **B — development.** *Mentoring and leadership training* nhằm phát triển kỹ năng/năng lực dài hạn; đề nói rõ *even if they are not promoted immediately*, nên không đồng nhất với advancement. *Retirement* là nghỉ hưu; *settlement* không phù hợp sự nghiệp.\n2. **B — advancement.** *Winning a competition* tạo lợi thế thăng tiến trong công ty. *Unemployment* là thất nghiệp; *migration* di chuyển/di cư; *validation* xác nhận/kiểm định.\n3. **A — truthful.** Người ra đề nói trực tiếp *factually correct* nên cần từ chỉ nội dung đúng sự thật. *Honest* cũng có vùng nghĩa giao thoa, nhưng mô tả lời kể đúng với sự kiện bằng *truthful* trực tiếp hơn. *Realistic* là giống thật/khả thi; *practical* là mang tính thực tế/thực hành.\n4. **B — honest.** Người kỹ sư thẳng thắn nhận lỗi dù nhớ nhầm vài chi tiết; thiện chí không che giấu quan trọng hơn tính đúng tuyệt đối của thông tin. *Truthful* nhấn vào nội dung đúng; *reliable* nói đến độ tin cậy, *theoretical* thuộc lý thuyết.\n5. **B — realistic.** Thiếu thiết bị/kinh phí nên kế hoạch không khả thi. *Reliable* là đáng tin; *truthful* là đúng sự thật; *communal* nghĩa là của chung.\n6. **B — reliable.** Quyết định y tế cần thông tin đáng tin cậy. *Realistic* không đảm bảo chính xác; *provincial* thuộc tỉnh; *mediocre* chỉ mức chất lượng kém/trung bình thấp.\n7. **A — practical.** *Experience with tools* là kinh nghiệm thực hành. *Theoretical* đối lập; *automatic* nói đến cơ chế tự động; *familial* thuộc gia đình.\n8. **A — practicality** (đáp án dự kiến). *Practicality* là mức khả thi/áp dụng được, nhưng **câu gốc chưa tối ưu collocation**: *understand the practical applications of those ideas* chính xác hơn nếu muốn nói ứng dụng trong công việc. Các phương án còn lại không diễn đạt điều đó.\n9. **A — company.** *Human company* chỉ sự hiện diện và đồng hành của con người. *Industry* ngành công nghiệp; *migration* di cư; *invasion* xâm nhập/xâm lược.\n10. **B — familial.** *Familial relationships* liên quan đến các thành viên gia đình. *Familiar* = quen thuộc; *family-like* = giống gia đình, không phải đồng nhất; *companionable* = dễ bầu bạn.\n11. **B — standardised** (đáp án dự kiến). Ngữ cảnh nhấn mạnh mọi ứng viên được đánh giá theo tiêu chí thống nhất. **Tuy nhiên D (*standard*) cũng có thể phù hợp**, nên đây là câu cần sửa trước khi dùng để chấm; có thể thay D bằng *personalised*.\n12. **A — prompt.** *A carefully written prompt* là chỉ dẫn đầu vào cho mô hình AI. *Memory* = trí nhớ; *industry* = ngành công nghiệp; *settlement* = sự giải quyết/định cư.\n13. **A — prompted.** Cấu trúc *prompt somebody to do something*. *Memorised* = học thuộc; *standardised* = chuẩn hóa; *accompanied* = đi cùng.\n14. **B — memorisation.** *Mechanical repetition* dẫn đến ghi nhớ bằng cách học thuộc. *Memory* là năng lực/ký ức; *memorable* tính từ; *memorise* động từ.\n15. **B — challenging** (đáp án dự kiến). *Intellectually rewarding* gợi tính thử thách đáng giá. **A (*difficult*) cũng hoàn toàn có thể đúng về ngữ pháp và nghĩa**; cần thay một distractor hoặc bổ sung điều kiện rõ ràng hơn.\n16. **B — straightforward.** *Only enter an email and create a password* mô tả một quy trình đơn giản, không phức tạp. *Easy-going* nói về thái độ/tính cách; *challenging* ngược ngữ cảnh; *sophisticated* tinh vi.\n17. **A — inaccessible.** Hạ tầng Internet kém khiến học trực tuyến khó tiếp cận. *Adaptable* thích nghi; *communal* dùng chung; *automated* đã tự động hóa.\n18. **A — befriended.** *Befriend somebody* là kết bạn với ai. *Accompanied with* sai cấu trúc ở câu này; *settled* và *deployed* sai nghĩa.\n19. **A — communal.** Vườn được mọi cư dân dùng chung. *Provincial* thuộc tỉnh; *domestic* trong nước/thuộc gia đình; *familial* thuộc gia đình.\n20. **B — automated.** *Has automated its packaging process* (present perfect + past participle): tự động hóa quy trình. *Automatic/autonomous/adaptable* không thể đi sau *has* ở cấu trúc chủ động với tân ngữ *its packaging process* như vậy.\n21. **C — automatic.** Cửa hoạt động theo tín hiệu cảm biến và quy trình có sẵn. *Autonomous* nhấn vào tự điều hướng/quyết định độc lập; *automated* có thể gần nghĩa nhưng ví dụ cửa cảm biến thường dùng *automatic door*; *adaptive* nhấn thay đổi theo điều kiện.\n22. **A — autonomous.** Robot tự phân tích tình huống và chọn tuyến đường. *Automatic/automated* không nhất thiết có quyền tự điều hướng; *standardised* = chuẩn hóa.\n23. **A — deploy.** *Deploy a new AI system* = đưa hệ thống vào hoạt động. *Migrate* = chuyển nơi/nền tảng; *accuse* = cáo buộc; *punish* = trừng phạt.\n24. **B — over-reliance.** *Constant over-reliance on AI* = phụ thuộc quá mức làm suy giảm tính tự chủ. *Urgency* cấp bách; *validation* kiểm định; *invasion* xâm nhập."
+          },
+          {
+            "title": "Questions 25–29: Closest in Meaning",
+            "content": "25. **A — obsolete.** *Outdated* = không còn phù hợp với hiện tại; *obsolete* nhấn mạnh đã lỗi thời và có thể bị thay thế. Ba phương án còn lại không cùng nghĩa.\n26. **B — without delay.** *Instantly* = ngay lập tức. *Gradually* = dần dần; *occasionally* = thỉnh thoảng; *in advance* = trước thời điểm.\n27. **B — perplexed.** *Confused* = bối rối, khó hiểu; *perplexed* thường mang sắc thái bối rối sâu hơn. *Relaxed* thoải mái; *satisfied* hài lòng; *industrious* chăm chỉ.\n28. **A — utilise.** *Deploy* là triển khai/đưa vào sử dụng; trong câu về software across computers, *utilise* gần nghĩa nhất trong các lựa chọn, nhưng **không hoàn toàn đồng nghĩa** vì deploy nhấn bước triển khai, utilize nhấn bước sử dụng. Các đáp án khác: *separate* tách; *verify* xác minh; *punish* trừng phạt.\n29. **C — personalised.** *Customized recommendations* là gợi ý được điều chỉnh riêng cho người dùng. *Standardised* = áp dụng chuẩn chung, trái với cá nhân hóa; *primitive* và *communal* không cùng nghĩa."
+          },
+          {
+            "title": "Questions 30–34: Opposite in Meaning",
+            "content": "30. **B — multinational** (đáp án dự kiến). Bài đối lập phạm vi trong nước với quốc tế. Nhưng *multinational* nói về tổ chức hoạt động nhiều nước, còn *domestic market* là thị trường trong nước: đối lập **không hoàn toàn đối xứng**. *Foreign/international market* sẽ sát hơn. *Provincial, local, internal* đều liên quan phạm vi bên trong hoặc địa phương.\n31. **C — highly sophisticated.** *Primitive* = thô sơ, đối lập máy móc tinh vi, phát triển cao. *Outdated/basic/mediocre* không biểu thị tính tinh vi cao.\n32. **C — active.** *Sedentary* ít vận động ↔ *active* năng động/vận động. *Inactive* đồng nghĩa hơn; *indolent* là lười biếng; *monotonous* đều đều, nhàm chán.\n33. **B — truthful.** *Untruthful claims* ↔ *truthful claims*. *Misleading* gần nghĩa với untruthful trong nhiều bối cảnh; *unrealistic/unreliable* khác góc độ đánh giá.\n34. **C — inaccessible.** *Accessible* ↔ *inaccessible*. *Practical, straightforward, adaptable* không đối lập trực tiếp."
+          },
+          {
+            "title": "Questions 35–40: Cloze — Smarter Personalization, Greater Responsibility",
+            "content": "35. **C — sophisticated.** Hệ thống phân tích lượng dữ liệu lớn và xử lý phức tạp nên *sophisticated*. *Mediocre* tầm thường; *primitive* sơ khai; *provincial* thuộc tỉnh/hạn hẹp.\n36. **A — user preferences.** Thói quen duyệt web, lựa chọn và sở thích người dùng giúp dự đoán nội dung muốn xem. *Data violations* vi phạm dữ liệu; *career advancements* thăng tiến; *settlements* giải quyết/định cư.\n37. **A — customised.** Gợi ý riêng từng người ↔ *showing everyone the same content*. *Communal* dùng chung; *standardised* áp dụng chuẩn chung; *theoretical* trên lý thuyết.\n38. **A — instantaneously.** Nền tảng xử lý dữ liệu gần như ngay lập tức; các trạng từ còn lại: *reluctantly* miễn cưỡng, *theoretically* về lý thuyết, *provincially* không phù hợp.\n39. **B — integrate.** *Integrate reliable data sources into systems* = tích hợp nguồn dữ liệu vào hệ thống. *Accuse/punish/separate* không phù hợp ý/khung động từ.\n40. **B — validation.** Trước quyết định tự động quan trọng cần kiểm định hệ thống. *Migration* di chuyển dữ liệu; *retirement* nghỉ hưu; *invasion* xâm nhập.\n\n---"
+          }
+        ]
       },
       "practice": {
-        "mcq": [],
+        "mcq": [
+          {
+            "question": "To ensure that applicants are evaluated consistently, the university introduced a ______ assessment with identical instructions and scoring criteria for everyone.",
+            "options": [
+              "individualised",
+              "standardised",
+              "informal",
+              "temporary"
+            ],
+            "answer": "B",
+            "explanation": "**Dịch:** Trường đại học giới thiệu một phương thức đánh giá được chuẩn hóa để mọi ứng viên được đánh giá nhất quán, với hướng dẫn và tiêu chí chấm điểm giống nhau.\n\n- **A. individualised — được cá nhân hóa:** nhấn điều chỉnh cho từng người, trái với *identical instructions and scoring criteria*. Ví dụ: *An individualised study plan reflects each learner's needs.*\n- **B. standardised — được chuẩn hóa (đúng):** *standardised assessment* dùng bộ yêu cầu/thang đánh giá nhất quán; đây chính là dấu hiệu được nêu trực tiếp. Ví dụ: *All candidates completed a standardised test.*\n- **C. informal — không chính thức:** mô tả mức độ nghi thức/quy định, không diễn đạt việc thống nhất tiêu chí. Một *informal assessment* vẫn có thể sử dụng cùng câu hỏi, nhưng câu này kiểm tra bản chất chuẩn hóa. Ví dụ: *The teacher used an informal discussion to check understanding.*\n- **D. temporary — tạm thời:** mô tả thời hạn áp dụng, không liên quan việc mọi ứng viên được đánh giá theo tiêu chuẩn giống nhau. Ví dụ: *The office introduced a temporary timetable.*\n\n**Transfer:** *standardise a process; standardisation of procedures; standardised assessment* (BrE).",
+            "part": "Vocabulary in Context"
+          },
+          {
+            "question": "Unlike an automatic door that simply responds to a sensor, the delivery robot can independently plan a new route when its usual path is blocked. It is an ______ system.",
+            "options": [
+              "autonomous",
+              "automatic",
+              "automated",
+              "standardised"
+            ],
+            "answer": "A",
+            "explanation": "**Dịch:** Không giống cánh cửa tự động chỉ phản ứng khi cảm biến phát tín hiệu, robot giao hàng có thể tự lập kế hoạch tuyến đường mới khi gặp chướng ngại.\n\n- **A. autonomous — có khả năng tự chủ (đúng):** manh mối là *independently plan a new route*. Ví dụ: *An autonomous vehicle may adjust its route when conditions change.*\n- **B. automatic — tự động:** một phản ứng dựa trên điều kiện lập trình sẵn; không nhất thiết có khả năng chọn phương án mới. Ví dụ: *An automatic door opens when someone approaches.*\n- **C. automated — được tự động hóa:** nói chung về cách quy trình được vận hành bằng máy; một hệ thống autonomous cũng có thể được automated, nhưng từ này **không diễn đạt chính xác bằng** khả năng lập kế hoạch độc lập được nhấn mạnh. Ví dụ: *The company automated its invoice processing.*\n- **D. standardised — được chuẩn hóa:** mô tả việc tuân theo tiêu chuẩn chung, không phải khả năng tự điều hướng. Ví dụ: *The hospital uses standardised reporting forms.*\n\n**Transfer:** *automatic* = cơ chế hoạt động; *automated* = trạng thái quy trình; *autonomous* = mức độ tự chủ.",
+            "part": "Vocabulary in Context"
+          },
+          {
+            "question": "Within minutes of installing the update, users were ______ with so many notifications that they could no longer identify the urgent security alert.",
+            "options": [
+              "reassured",
+              "informed",
+              "entertained",
+              "overwhelmed"
+            ],
+            "answer": "D",
+            "explanation": "**Dịch:** Trong vài phút sau cập nhật, người dùng bị ngập trong quá nhiều thông báo đến mức không thể nhận ra cảnh báo bảo mật khẩn cấp.\n\n- **A. reassured — được trấn an:** hàm ý thấy yên tâm hơn, trái với hệ quả mất khả năng phân biệt cảnh báo. Ví dụ: *The technician reassured the customers that their files were safe.*\n- **B. informed — được cung cấp thông tin:** không tự nó biểu thị quá tải. Có thể nói *informed about an update*, nhưng thông tin quyết định ở đây là *so many ... could no longer identify*. Ví dụ: *Users were informed about the new policy.*\n- **C. entertained — được giải trí:** không diễn tả phản ứng khi bị dồn dập các thông báo công việc/bảo mật. Ví dụ: *The audience was entertained by the demonstration.*\n- **D. overwhelmed — bị quá tải (đúng):** cấu trúc **overwhelm somebody with something**. Ví dụ: *The platform overwhelmed staff with repeated alerts.*",
+            "part": "Vocabulary in Context"
+          },
+          {
+            "question": "Despite living in different countries, the siblings made regular video calls to maintain their ______ ties.",
+            "options": [
+              "familiar",
+              "communal",
+              "familial",
+              "companionable"
+            ],
+            "answer": "C",
+            "explanation": "**Dịch:** Dù sống ở nhiều quốc gia, anh chị em vẫn thường xuyên gọi video để duy trì mối quan hệ gia đình.\n\n- **A. familiar — quen thuộc:** *a familiar face* = người quen mặt; không mô tả bản chất quan hệ huyết thống trong cụm *ties*. Ví dụ: *Her voice sounded familiar.*\n- **B. communal — thuộc sở hữu/sinh hoạt chung của cộng đồng:** *communal garden*; không nói đến quan hệ riêng giữa những người anh chị em. Ví dụ: *Residents share a communal kitchen.*\n- **C. familial — thuộc gia đình (đúng):** **familial ties** là sự gắn bó trong gia đình. Ví dụ: *Regular visits can strengthen familial bonds.*\n- **D. companionable — dễ chịu khi bầu bạn:** mô tả tính cách/cảm giác khi ở cùng, không biểu thị quan hệ gia đình. Ví dụ: *The neighbour was quiet but companionable.*",
+            "part": "Vocabulary in Context"
+          },
+          {
+            "question": "The security team's discovery of a serious privacy weakness ______ the company to revise its data-sharing policy before releasing the app.",
+            "options": [
+              "prompted",
+              "punished",
+              "memorised",
+              "accompanied"
+            ],
+            "answer": "A",
+            "explanation": "**Dịch:** Việc phát hiện lỗ hổng bảo mật khiến công ty phải xem xét lại chính sách chia sẻ dữ liệu.\n\n- **A. prompted — thúc đẩy, khiến ai đó làm gì (đúng):** **prompt somebody to do something**. *The discovery prompted the company to revise...* Ví dụ: *Customer complaints prompted the bank to improve security.*\n- **B. punished — trừng phạt:** cấu trúc thường dùng *punish somebody for something*; ở đây một phát hiện kỹ thuật không 'trừng phạt công ty để sửa'. Ví dụ: *The firm punished employees for deliberate misconduct.*\n- **C. memorised — học thuộc:** không có liên hệ nhân quả phù hợp giữa phát hiện lỗ hổng và ghi nhớ. Ví dụ: *She memorised the emergency procedures.*\n- **D. accompanied — đi cùng:** *accompany somebody*; không biểu thị nguyên nhân khiến công ty sửa chính sách. Ví dụ: *A technician accompanied the inspector.*",
+            "part": "Vocabulary in Context"
+          },
+          {
+            "question": "The retirement centre wanted ______ volunteers: people whose company the residents would genuinely enjoy, rather than people selected solely for their technical skills.",
+            "options": [
+              "ingenious",
+              "scrupulous",
+              "companionable",
+              "impersonal"
+            ],
+            "answer": "C",
+            "explanation": "**Dịch:** Trung tâm dưỡng lão muốn tình nguyện viên dễ mến, khiến người cao tuổi thực sự thích có họ bên cạnh hơn là chỉ giỏi chuyên môn.\n\n- **A. ingenious — khéo léo, sáng tạo:** có thể hữu ích trong xử lý vấn đề, nhưng tiêu chí được nhấn ở đây là **pleasure of their company**, không phải óc sáng tạo. Ví dụ: *She devised an ingenious repair method.*\n- **B. scrupulous — cực kỳ cẩn trọng, có nguyên tắc:** nói về độ tỉ mỉ/đạo đức; không trực tiếp mô tả sự dễ chịu khi trò chuyện. Ví dụ: *The accountant was scrupulous about checking receipts.*\n- **C. companionable — dễ chịu để bầu bạn (đúng):** khớp **whose company residents would genuinely enjoy**. Ví dụ: *His companionable nature helped newcomers feel welcome.*\n- **D. impersonal — thiếu tính cá nhân, lạnh lùng:** đối lập với sự gần gũi được coi trọng. Ví dụ: *Automated messages sometimes feel impersonal.*",
+            "part": "Vocabulary in Context"
+          },
+          {
+            "question": "Before the hospital used its AI model in clinical decisions, researchers conducted independent ______ of its predictions against real-world patient outcomes.",
+            "options": [
+              "deployment",
+              "validation",
+              "migration",
+              "automation"
+            ],
+            "answer": "B",
+            "explanation": "**Dịch:** Trước khi dùng mô hình AI trong quyết định lâm sàng, các nhà nghiên cứu tiến hành kiểm định độc lập dự đoán của nó so với kết quả bệnh nhân thực tế.\n\n- **A. deployment — việc triển khai:** là bước đưa hệ thống vào sử dụng; việc kiểm tra hiệu quả trước khi sử dụng không phải deployment. Ví dụ: *The deployment was delayed until testing ended.*\n- **B. validation — việc kiểm định, xác nhận phù hợp (đúng):** **validation of model predictions against real-world outcomes** là kiểm định hiệu năng/mức độ phù hợp với mục đích dùng. Ví dụ: *Independent validation exposed weaknesses in the model.*\n- **C. migration — việc chuyển đổi/di chuyển dữ liệu hoặc hệ thống:** không có dấu hiệu chuyển dữ liệu sang môi trường khác. Ví dụ: *The data migration took several hours.*\n- **D. automation — sự tự động hóa:** nói đến cách xử lý tự động, không phải bước đánh giá tính đáng tin trước quyết định y tế. Ví dụ: *Automation reduced repetitive paperwork.*",
+            "part": "Vocabulary in Context"
+          },
+          {
+            "question": "The programmer spends most of her working day seated at a computer, but she exercises every evening. Her job is therefore ______, although she is not necessarily lazy.",
+            "options": [
+              "indolent",
+              "strenuous",
+              "monotonous",
+              "sedentary"
+            ],
+            "answer": "D",
+            "explanation": "**Dịch:** Người lập trình ngồi làm việc cả ngày nhưng vẫn tập thể dục mỗi tối; công việc ít vận động không đồng nghĩa người đó lười.\n\n- **A. indolent — lười biếng:** đánh giá xu hướng tránh nỗ lực; không thể suy ra từ việc ngồi làm việc. Ví dụ: *An indolent manager ignored repeated maintenance warnings.*\n- **B. strenuous — đòi hỏi nhiều sức lực:** đối lập với đặc điểm 'ngồi tại máy tính phần lớn thời gian'. Ví dụ: *Mountain rescue can involve strenuous physical work.*\n- **C. monotonous — đơn điệu, nhàm chán:** công việc ngồi nhiều **có thể** thú vị hoặc tẻ nhạt; câu không có dữ kiện về tính lặp lại. Ví dụ: *Entering identical records all day was monotonous.*\n- **D. sedentary — ít vận động, chủ yếu ngồi (đúng):** tập trung vào đặc điểm hoạt động thể chất. Ví dụ: *A sedentary office job can be balanced with regular exercise.*",
+            "part": "Vocabulary in Context"
+          },
+          {
+            "question": "Investigators discovered a gradual, covert ______ of the company's network: the attackers had blended in as ordinary employees for several months before stealing data.",
+            "options": [
+              "intrusion",
+              "invasion",
+              "infiltration",
+              "violation"
+            ],
+            "answer": "C",
+            "explanation": "**Dịch:** Điều tra viên phát hiện việc thâm nhập bí mật, từ từ vào mạng doanh nghiệp qua các tài khoản giả danh nhân viên trong nhiều tháng.\n\n- **A. intrusion — sự xâm nhập không được phép:** rộng hơn và có thể dùng cho sự cố mạng; nhưng không nhất thiết nói lên phương thức **giả danh và hòa lẫn kéo dài**, trọng tâm của câu. Ví dụ: *The firewall detected an intrusion attempt.*\n- **B. invasion — sự xâm nhập/xâm lược:** thường gợi sự can thiệp quy mô lớn hoặc xâm phạm sâu; không đặc tả chiến thuật ngấm ngầm. Ví dụ: *The surveillance programme raised fears of an invasion of privacy.*\n- **C. infiltration — sự trà trộn, thâm nhập kín đáo (đúng):** được xác định bởi *gradual, covert; blended in; for several months*. Ví dụ: *The infiltration of the organisation went undetected for months.*\n- **D. violation — sự vi phạm:** có thể mô tả vi phạm quy định, không gọi tên trực tiếp hình thức trà trộn vào mạng. Ví dụ: *Sharing private records without permission is a privacy violation.*",
+            "part": "Vocabulary in Context"
+          },
+          {
+            "question": "The platform buried a simple admission of wrongdoing under pages of technical jargon, apparently hoping to ______ the fact that it had collected users' data without consent.",
+            "options": [
+              "acknowledge",
+              "obfuscate",
+              "scrutinise",
+              "corroborate"
+            ],
+            "answer": "B",
+            "explanation": "**Dịch:** Nền tảng cố giấu việc thu thập dữ liệu không có đồng ý bằng cách phủ lên lời thừa nhận đơn giản hàng trang thuật ngữ kỹ thuật.\n\n- **A. acknowledge — thừa nhận:** đối lập mục đích che giấu. Ví dụ: *The firm acknowledged that it had made a mistake.*\n- **B. obfuscate — làm mờ nghĩa, cố tình khiến điều gì khó hiểu (đúng):** đúng cơ chế **bury under technical jargon**. Ví dụ: *The contract's convoluted language seemed designed to obfuscate key costs.*\n- **C. scrutinise — xem xét kỹ:** mục tiêu là phân tích phát hiện thông tin, không làm nó khó thấy. Ví dụ: *Auditors scrutinised every expense claim.*\n- **D. corroborate — củng cố/xác nhận bằng chứng:** khiến một tuyên bố đáng tin hơn, không giấu nó. Ví dụ: *Independent data corroborated the witness's account.*",
+            "part": "Vocabulary in Context"
+          },
+          {
+            "question": "After a lengthy investigation, the police identified the <u>perpetrator</u> who had stolen thousands of customer records.",
+            "options": [
+              "culprit",
+              "bystander",
+              "casualty",
+              "whistle-blower"
+            ],
+            "answer": "A",
+            "explanation": "**Perpetrator** = người gây ra hoặc thực hiện hành vi phạm pháp/gây hại nghiêm trọng; trong câu người đánh cắp dữ liệu. \n\n- **A. culprit — thủ phạm/người gây ra sự việc (đúng):** gần nghĩa nhất trong các lựa chọn. *Investigators identified the culprit behind the data leak.*\n- **B. bystander — người đứng xem, không trực tiếp tham gia:** trái vai trò người thực hiện. *A bystander alerted the police.*\n- **C. casualty — người bị thương/tử vong hoặc thiệt hại:** thuộc nhóm nạn nhân/thiệt hại, không phải thủ phạm. *The accident caused several casualties.*\n- **D. whistle-blower — người tố giác sai phạm:** thường cung cấp thông tin để vạch trần hành vi, không phải mặc nhiên là thủ phạm. *A whistle-blower revealed the unlawful practice.*",
+            "part": "Closest in Meaning"
+          },
+          {
+            "question": "Despite repeated warnings, the <u>indolent</u> administrator rarely checked the system's security logs.",
+            "options": [
+              "active",
+              "sophisticated",
+              "vigilant",
+              "lazy"
+            ],
+            "answer": "D",
+            "explanation": "**Indolent** = lười biếng, không muốn bỏ công nỗ lực; manh mối: *rarely checked the logs despite repeated warnings*.\n\n- **A. active — năng động:** gần nghĩa đối lập, không thay thế *indolent*. *She leads an active lifestyle.*\n- **B. sophisticated — tinh vi/phát triển cao:** đánh giá mức độ phức tạp/kỹ thuật, không nói về thái độ làm việc. *They installed sophisticated detection software.*\n- **C. vigilant — cảnh giác, chú ý theo dõi:** gần như trái với người quản trị bỏ qua cảnh báo. *Vigilant staff spotted an unusual login.*\n- **D. lazy — lười biếng (đúng):** gần nhất với *indolent* trong cách dùng ở câu. *A lazy approach to security can create vulnerabilities.*",
+            "part": "Closest in Meaning"
+          },
+          {
+            "question": "The software provider remained <u>intransigent</u>, refusing to alter its data-sharing policy even after several independent reviews recommended changes.",
+            "options": [
+              "transparent",
+              "conciliatory",
+              "uncompromising",
+              "tentative"
+            ],
+            "answer": "C",
+            "explanation": "**Intransigent** = cứng rắn không nhượng bộ, bất chấp yêu cầu đổi chính sách; thường có sắc thái tiêu cực khi người nói cho rằng sự cứng nhắc là bất hợp lý.\n\n- **A. transparent — minh bạch:** liên quan việc công khai thông tin, không phải sẵn sàng thỏa hiệp. *The company was transparent about its data practices.*\n- **B. conciliatory — có thiện chí hòa giải/thỏa hiệp:** gần đối lập với *intransigent*. *The manager adopted a conciliatory tone.*\n- **C. uncompromising — không chịu nhượng bộ (đúng):** cùng hành vi *refusing to alter its policy*. *The board remained uncompromising in the negotiations.*\n- **D. tentative — dè dặt/chưa chắc chắn:** mô tả sự thăm dò, không phải cố chấp. *The team reached a tentative agreement.*",
+            "part": "Closest in Meaning"
+          },
+          {
+            "question": "Once the company introduced a modern security platform, the previous software became <u>obsolete</u> and was no longer supported.",
+            "options": [
+              "outmoded",
+              "current",
+              "redundant",
+              "outdated"
+            ],
+            "answer": "B",
+            "explanation": "**Obsolete** = đã lỗi thời, không còn được sử dụng/hỗ trợ trong tình huống này.\n\n- **A. outmoded — lỗi thời:** gần nghĩa với *obsolete*, không phải trái nghĩa. *The interface looked outmoded.*\n- **B. current — hiện hành, còn cập nhật (đúng):** đối lập phần mềm không còn được hỗ trợ. *The company uses the current version of the application.*\n- **C. redundant — dư thừa hoặc không còn cần thiết:** gần nghĩa trong vài tình huống nhưng không trực tiếp có nghĩa 'hiện đại/cập nhật'. *The extra backup server became redundant.*\n- **D. outdated — không cập nhật:** cùng chiều nghĩa với *obsolete*. *The security instructions were outdated.*",
+            "part": "Opposite in Meaning"
+          },
+          {
+            "question": "The independent review panel delivered an <u>impartial</u> assessment, applying the same standards to both the company's benefits and its privacy risks.",
+            "options": [
+              "biased",
+              "thorough",
+              "balanced",
+              "transparent"
+            ],
+            "answer": "A",
+            "explanation": "**Impartial** = công bằng, không thiên vị các bên; manh mối: *applying the same standards to both sides*.\n\n- **A. biased — thiên vị (đúng):** đối lập trực tiếp. *The panel was criticised for a biased assessment.*\n- **B. thorough — kỹ lưỡng, đầy đủ:** đánh giá mức độ xem xét, không đối lập với tính khách quan. *They conducted a thorough investigation.*\n- **C. balanced — cân bằng các góc nhìn:** thường gần nghĩa *impartial* trong văn cảnh đánh giá. *The article offered a balanced account.*\n- **D. transparent — minh bạch:** việc công khai cách làm, không phải đối lập với tính không thiên vị. *The review process was transparent.*",
+            "part": "Opposite in Meaning"
+          },
+          {
+            "question": "Before publishing the investigation, the journalists <u>scrutinised</u> the AI-generated figures to identify any hidden inaccuracies.",
+            "options": [
+              "examined",
+              "verified",
+              "investigated",
+              "overlooked"
+            ],
+            "answer": "D",
+            "explanation": "**Scrutinised** = xem xét cực kỳ kỹ lưỡng để phát hiện lỗi/chi tiết; manh mối là *identify hidden inaccuracies*.\n\n- **A. examined — xem xét:** gần nghĩa, không trái. *Doctors examined the scan.*\n- **B. verified — xác minh:** hoạt động có liên quan, nhấn kiểm tra tính chính xác; không đối lập. *The editor verified the figures with official records.*\n- **C. investigated — điều tra, tìm hiểu:** cũng liên quan hành vi xem xét sâu. *The team investigated the discrepancy.*\n- **D. overlooked — bỏ sót/không để ý (đúng):** thể hiện ngược lại việc kiểm tra kỹ. *The auditors overlooked a serious discrepancy.*",
+            "part": "Opposite in Meaning"
+          }
+        ],
         "reading": {
-          "title": "",
-          "passage": "",
-          "questions": []
-        }
-      }
-    },
-    {
-      "id": "unit-02",
-      "title": "Unit 02",
-      "topic": "Vocabulary",
-      "published": false,
-      "lesson": {
-        "overview": "",
-        "sections": [],
-        "notes": []
-      },
-      "practice": {
-        "mcq": [],
-        "reading": {
-          "title": "",
-          "passage": "",
-          "questions": []
+          "title": "An AI Adviser That Still Needs Human Judgement",
+          "passage": "A university recently began testing an AI-powered careers platform designed to suggest internships to students. The system compares advertised job requirements with students' completed courses, practical projects and preferences they choose to provide. It can produce personalised recommendations almost instantaneously, but it cannot accept or reject applications. University advisers remain responsible for reviewing its suggestions and discussing them with students.\n\nEarly feedback was largely positive. Many students liked receiving a shortlist of opportunities rather than searching hundreds of advertisements themselves. However, some interpreted a high compatibility score as a guarantee of career advancement. The university therefore explained that the platform could support **career development**, such as identifying skills to improve, without promising a promotion or even a job offer.\n\nDuring an independent evaluation, researchers found a more serious problem. Applicants whose experiences differed from those of previous successful interns tended to receive lower scores, even when their practical skills were relevant. The model had learned patterns from historical recruitment data that did not always reflect an individual's current ability. Researchers consequently reviewed recommendations across different groups and compared the system's predictions with independently assessed outcomes before approving wider deployment.\n\nThe privacy team also discovered that some optional preference data could remain in access logs longer than necessary. The university shortened the data-retention period and restricted staff access. There was no evidence that this particular issue had resulted in an external data breach, but the team regarded it as a weakness worth correcting.\n\nThe trial illustrates both the promise and the limitations of automation. AI can reduce routine work and help students explore unfamiliar opportunities. Nevertheless, fast and sophisticated recommendations are not automatically reliable or impartial. Students and advisers still need to question the output, verify important claims and exercise independent judgement.",
+          "questions": [
+            {
+              "question": "Which statement best describes the role of the AI platform?",
+              "options": [
+                "It makes final decisions about which applicants employers must accept.",
+                "It suggests opportunities while human advisers retain oversight.",
+                "It replaces practical training with automated examinations.",
+                "It collects students' medical records to assess job suitability."
+              ],
+              "answer": "B",
+              "explanation": "- **A:** Sai vì passage nói *cannot accept or reject applications*, không quyết định tuyển dụng.\n- **B (đúng):** Đoạn 1 mô tả hệ thống gợi ý cơ hội; cố vấn vẫn xem xét và trao đổi với sinh viên.\n- **C:** Không có việc thay huấn luyện thực tế bằng kỳ thi tự động; nền tảng sử dụng thông tin *practical projects* để đánh giá cơ hội.\n- **D:** Đoạn chỉ nói dữ liệu khóa học, dự án, sở thích được tự nguyện cung cấp; không nhắc thu thập hồ sơ y tế.\n\n**Cơ chế paraphrase:** *suggest internships* → *suggest opportunities*; *remain responsible for reviewing* → *retain oversight*.",
+              "part": "Reading Transfer"
+            },
+            {
+              "question": "Why did the university distinguish career development from career advancement?",
+              "options": [
+                "The platform was designed to promote every user within a year.",
+                "Students were required to accept the platform's first recommendation.",
+                "Career development refers only to earning more money.",
+                "Students could build their skills without being guaranteed a promotion or job offer."
+              ],
+              "answer": "D",
+              "explanation": "- **A:** Không có cam kết thăng chức sau một năm; đây chính là cách diễn giải sai mà trường cần sửa.\n- **B:** Sinh viên không bị bắt buộc nhận gợi ý đầu tiên; cố vấn và sinh viên thảo luận các đề xuất.\n- **C:** *Career development* bao gồm cải thiện kỹ năng và hiểu năng lực của mình, không giới hạn ở tiền lương.\n- **D (đúng):** Đoạn 2 định nghĩa rõ việc phát triển kỹ năng không hứa hẹn được tuyển hoặc thăng chức.\n\n**Lexical transfer:** *career development* ≠ *guaranteed career advancement*.",
+              "part": "Reading Transfer"
+            },
+            {
+              "question": "What did the independent evaluation reveal about the model's recommendations?",
+              "options": [
+                "Historical recruitment patterns could disadvantage applicants with less conventional backgrounds.",
+                "The model was too slow to compare job requirements with applicants' skills.",
+                "Most students had refused to share any information about their interests.",
+                "Employers had given the platform complete control over recruitment."
+              ],
+              "answer": "A",
+              "explanation": "- **A (đúng):** Dữ liệu những người từng được tuyển tạo xu hướng chấm thấp các hồ sơ khác với mẫu cũ, dù họ có kỹ năng phù hợp.\n- **B:** Không có bằng chứng hệ thống xử lý chậm; ngược lại passage nói kết quả gần như tức thời.\n- **C:** Passage chỉ nói sở thích được cung cấp tự nguyện, không nói phần lớn từ chối.\n- **D:** Cố vấn vẫn giữ quyền xem xét; không có doanh nghiệp nào giao toàn quyền tuyển dụng cho máy.\n\n**Reading logic:** 'Từng thành công trong quá khứ' không chứng minh quy trình dự đoán hiện tại công bằng cho mọi hồ sơ mới.",
+              "part": "Reading Transfer"
+            },
+            {
+              "question": "How did the university respond to the privacy concern?",
+              "options": [
+                "It deleted all career-related data and permanently closed the platform.",
+                "It announced that an external attacker had stolen students' records.",
+                "It reduced the retention period and limited who could access the data.",
+                "It stopped advisers from checking recommendations."
+              ],
+              "answer": "C",
+              "explanation": "- **A:** Trường không xóa mọi dữ liệu hoặc đóng nền tảng.\n- **B:** Passage nói rõ *there was no evidence ... of an external data breach*. Không được đánh đồng một lỗ hổng với một vụ rò rỉ đã xảy ra.\n- **C (đúng):** *Shortened the data-retention period* và *restricted staff access* là bằng chứng trực tiếp.\n- **D:** Cố vấn vẫn cần kiểm tra khuyến nghị; trường không cấm họ xem.\n\n**Reading trap:** *Privacy weakness* ≠ *confirmed external breach*.",
+              "part": "Reading Transfer"
+            },
+            {
+              "question": "Which conclusion is most strongly supported by the passage?",
+              "options": [
+                "A sophisticated system is necessarily more impartial than a human adviser.",
+                "Personalised results still require checks for reliability and fairness.",
+                "AI-generated compatibility scores always reflect applicants' current abilities.",
+                "Automated advice should never be used in an educational setting."
+              ],
+              "answer": "B",
+              "explanation": "- **A:** 'Sophisticated' không bảo đảm 'impartial'; bài khẳng định ngược lại.\n- **B (đúng):** Đoạn cuối nhấn tốc độ, cá nhân hóa và tính tinh vi không đủ chứng minh độ tin cậy/công bằng; cần đánh giá độc lập.\n- **C:** Hệ thống có thể mang thiên lệch từ dữ liệu cũ, nên điểm tương thích không phải lúc nào cũng phản ánh đúng năng lực hiện tại.\n- **D:** Bài nêu cả ích lợi của AI và nhu cầu kiểm soát; không kết luận cấm tuyệt đối việc dùng AI trong giáo dục.\n\n**Inference:** Công cụ hữu ích ≠ công cụ không cần kiểm tra. Kết luận hợp lý là sử dụng có giám sát.",
+              "part": "Reading Transfer"
+            }
+          ]
         }
       }
     }
