@@ -123,20 +123,29 @@ function unitPage(){
 
 function notes(u){const arr=u.lesson.notes;return arr.length?arr.map((n,i)=>'<div class="note"><strong style="display:block;color:#d6bcfa;font-size:11px;margin-bottom:7px">NOTE '+String(i+1).padStart(2,"0")+'</strong>'+br(n)+'</div>').join(""):blanks();}
 
+
 function lessonPage(){
  const u=current(),l=u.lesson;
- const tabs=[["lecture","Bài giảng"],["notes","Notes"]].map(([key,label])=>
-  '<button class="tab '+(state.lessonTab===key?"active":"")+'" data-lesson-tab="'+key+'">'+label+'</button>').join("");
- const body=state.lessonTab==="notes"?
- '<div class="content-card"><div class="row between"><h3>Teacher Notes</h3><span class="badge">'+l.notes.length+' notes</span></div>'+notes(u)+'</div>':
- '<div class="content-card"><h3>Nội dung bài học</h3>'+(l.overview?'<div class="lecture-text">'+esc(l.overview)+'</div>':blanks())+'</div>'+
- '<div class="content-card"><h3>Kiến thức Vocabulary</h3>'+(l.sections.length?l.sections.map(s=>'<div class="note"><strong>'+esc(s.title)+'</strong><div style="margin-top:8px">'+br(s.content)+'</div></div>').join(""):blanks())+'</div>';
+ const tabs=[["lecture","Bài giảng"],["notes","Notes"],["original","Lời giải bài gốc"]]
+ .map(([key,label])=>'<button class="tab '+(state.lessonTab===key?"active":"")+'" data-lesson-tab="'+key+'">'+label+'</button>').join("");
+ let body="";
+ if(state.lessonTab==="notes"){
+  body='<div class="content-card"><div class="row between"><h3>Teacher Notes tổng hợp</h3><span class="badge">'+l.notes.length+' notes</span></div>'+
+  (l.notes.length?l.notes.map((n,i)=>'<div class="note"><strong class="note-index">NOTE '+String(i+1).padStart(2,"0")+'</strong>'+richInline(n)+'</div>').join(""):blanks())+'</div>';
+ }else if(state.lessonTab==="original"){
+  const sols=l.originalSolutions||[];
+  body='<div class="content-card"><div class="row between"><h3>Lời giải bài tập đã học</h3><span class="badge">40 câu gốc</span></div>'+
+  (sols.length?sols.map((x,i)=>'<details class="lesson-section" '+(i===0?'open':'')+'><summary>'+richInline(x.title)+'</summary><div class="lesson-section-body">'+richText(x.content)+'</div></details>').join(""):blanks())+'</div>';
+ }else{
+  body='<div class="content-card"><h3>Tổng quan</h3>'+(l.overview?richText(l.overview):blanks())+'</div>'+
+  '<div class="content-card"><div class="row between" style="margin-bottom:16px"><h3 style="margin:0">Kiến thức Vocabulary</h3><span class="badge">'+l.sections.length+' chủ đề</span></div>'+
+  (l.sections.length?l.sections.map((x,i)=>'<details class="lesson-section" '+(i===0?'open':'')+'><summary><span class="section-index">'+String(i+1).padStart(2,"0")+'</span> '+richInline(x.title)+'</summary><div class="lesson-section-body">'+richText(x.content)+'</div></details>').join(""):blanks())+'</div>';
+ }
  return sectionHeader(u,"Bài giảng chi tiết")+
  '<div class="row between top workspace-heading"><div><span class="eyebrow">OPTION 01</span><h2>Bài giảng chi tiết</h2></div>'+
  '<button class="btn secondary small" data-print-open="lesson">▣ In bài giảng</button></div>'+
  '<div class="content-grid study-content-grid"><div><div class="tabs">'+tabs+'</div>'+body+'</div>'+
- '<aside class="content-aside"><div class="side-card"><h3>Nội dung</h3><p class="subtle">01 &nbsp; Bài giảng<br>02 &nbsp; Kiến thức<br>03 &nbsp; Notes</p></div>'+
- '<div class="side-card"><h3>'+esc(u.title)+'</h3><p class="subtle">'+l.notes.length+' notes · '+l.sections.length+' mục</p></div></aside></div>';
+ '<aside class="content-aside"><div class="side-card"><h3>Trong Unit này</h3><p class="subtle">'+l.sections.length+' chủ đề<br>'+l.notes.length+' notes tổng hợp<br>40 câu gốc</p></div></aside></div>';
 }
 
 function quizList(){return state.practicePart==="mcq"?newQ(current()):readQ(current());}
