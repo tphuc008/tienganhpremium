@@ -25,7 +25,7 @@ function richText(content){
 const blanks=()=>'<div class="placeholder" aria-label="Chưa có nội dung"><div class="bar lg"></div><div class="bar"></div><div class="bar md"></div><div class="bar sm"></div></div>';
 const fallback=()=>({version:1,units:[{id:"unit-01",title:"Unit 01",topic:"Vocabulary",published:false,lesson:{overview:"",sections:[],notes:[]},practice:{mcq:[],reading:{title:"",passage:"",questions:[]}}},{id:"unit-02",title:"Unit 02",topic:"Vocabulary",published:false,lesson:{overview:"",sections:[],notes:[]},practice:{mcq:[],reading:{title:"",passage:"",questions:[]}}}]});
 let db=fallback();
-const state={view:"home",unitId:"unit-01",lessonTab:"lecture",practicePart:"mcq",qIndex:0,answers:{},submitted:false,printType:"lesson",printNotes:true,printAnswers:true,personalDraft:false,printOriginal:false,printText:"",adminJSON:"",adminMessage:"",adminError:false};
+const state={view:"home",unitId:"unit-01",lessonTab:"lecture",practicePart:"mcq",qIndex:0,answers:{},submitted:false,printType:"lesson",printNotes:true,printAnswers:true,personalDraft:false,printOriginal:true,printText:"",adminJSON:"",adminMessage:"",adminError:false};
 const current=()=>db.units.find(u=>u.id===state.unitId)||db.units[0];
 const isPublished=u=>u.published===true;
 const newQ=u=>u.practice?.mcq||[];
@@ -181,21 +181,44 @@ function practicePage(){
 function printQuestions(questions,start=0){
  return questions.map((q,i)=>{const item=normalizeQ(q);return '<div class="print-question"><strong>'+(start+i+1)+'. '+richInline(item.question||"[Nội dung câu hỏi]")+'</strong>'+item.options.map((x,j)=>'<span class="option">'+["A","B","C","D"][j]+'. '+esc(x||"[Lựa chọn]")+'</span>').join("")+'</div>';}).join("");
 }
+
 function printAnswers(questions,start=0){
- return questions.map((q,i)=>{const item=normalizeQ(q);return '<div class="print-question"><strong>'+(start+i+1)+'. '+esc(item.answer||"—")+'</strong>'+(item.explanation?'<div class="explanation">'+esc(item.explanation)+'</div>':"")+'</div>';}).join("");
+ return questions.map((q,i)=>{const item=normalizeQ(q);return '<div class="print-question"><strong>'+(start+i+1)+'. '+esc(item.answer||"—")+'</strong>'+(item.explanation?'<div class="explanation">'+richText(item.explanation)+'</div>':"")+'</div>';}).join("");
+}
+function groupedPrintQuestions(questions){
+ let out="",previous="";
+ questions.forEach((q,i)=>{
+  const part=q.part||"Vocabulary in Context";
+  if(part!==previous){
+   const title=part==="Vocabulary in Context"?"Part I. Vocabulary in Context":part==="Closest in Meaning"?"Part II. Closest in Meaning":part==="Opposite in Meaning"?"Part III. Opposite in Meaning":part;
+   out+='<h3>'+esc(title)+'</h3>';previous=part;
+  }
+  out+=printQuestions([q],i);
+ });
+ return out;
 }
 function printBase(){
  const u=current(),l=u.lesson,p=u.practice;
- if(state.printType==="lesson")return '<div class="paper"><span class="masthead">✦ ENGLISH PRACTICE HUB</span><h2>'+esc(u.title)+'</h2><p>'+esc(u.topic)+'</p><div class="rule"></div><h3>Bài giảng chi tiết</h3>'+(l.overview?'<p>'+esc(l.overview)+'</p>':'<div class="empty-slot">Nội dung bài giảng</div>')+l.sections.map(s=>'<h3>'+esc(s.title)+'</h3><p>'+esc(s.content)+'</p>').join("")+(state.printNotes?'<h3>Teacher Notes</h3>'+(l.notes.length?l.notes.map(n=>'<div class="print-note">'+esc(n)+'</div>').join(""):'<div class="empty-slot">Notes</div>'):"")+'</div>';
+ if(state.printType==="lesson"){
+  return '<div class="paper"><span class="masthead">✦ ENGLISH PRACTICE HUB</span><h2>'+esc(u.title)+'</h2><p>'+esc(u.topic)+'</p><div class="rule"></div>'+
+  '<h3>Bài giảng chi tiết</h3>'+(l.overview?richText(l.overview):'<div class="empty-slot">Nội dung bài giảng</div>')+
+  l.sections.map((x,i)=>'<section class="print-lesson-section"><h3>'+(i+1)+'. '+richInline(x.title)+'</h3>'+richText(x.content)+'</section>').join("")+
+  (state.printNotes?'<h3>Teacher Notes</h3>'+(l.notes.length?l.notes.map(n=>'<div class="print-note">'+richInline(n)+'</div>').join(""):'<div class="empty-slot">Notes</div>'):"")+
+  (state.printOriginal?'<h3>Lời giải 40 câu gốc</h3>'+(l.originalSolutions||[]).map(x=>'<h3>'+richInline(x.title)+'</h3>'+richText(x.content)).join(""):"")+'</div>';
+ }
  const questions=p.mcq,read=p.reading;
- return '<div class="paper"><span class="masthead">✦ ENGLISH PRACTICE HUB</span><h2>'+esc(u.title)+'</h2><p>'+esc(u.topic)+'</p><div class="rule"></div><h3>Phần I · 10 câu trắc nghiệm</h3>'+(questions.length?printQuestions(questions):'<div class="empty-slot">10 câu trắc nghiệm A–D</div>')+
- '<h3>Phần II · Reading Passage</h3>'+(read.passage?'<p>'+esc(read.passage)+'</p>':'<div class="empty-slot">Passage ngắn</div>')+(read.questions.length?printQuestions(read.questions,questions.length):'<div class="empty-slot">5 câu hỏi theo passage</div>')+
+ return '<div class="paper"><span class="masthead">✦ ENGLISH PRACTICE HUB</span><h2>'+esc(u.title)+'</h2><p>'+esc(u.topic)+'</p><div class="rule"></div>'+
+ (questions.length?groupedPrintQuestions(questions):'<div class="empty-slot">Câu hỏi Vocabulary A–D</div>')+
+ '<h3>Part IV. Reading Transfer</h3>'+(read.title?'<h4>'+richInline(read.title)+'</h4>':"")+
+ (read.passage?richText(read.passage):'<div class="empty-slot">Reading Passage</div>')+
+ (read.questions.length?printQuestions(read.questions,questions.length):'<div class="empty-slot">5 câu hỏi theo passage</div>')+
  (state.printAnswers?'<div class="answer-key"><h3>Đáp án & Giải thích</h3>'+((questions.length+read.questions.length)?printAnswers(questions)+printAnswers(read.questions,questions.length):'<div class="empty-slot">Đáp án ở cuối tài liệu</div>')+'</div>':"")+'</div>';
 }
+
 function paperFromText(text){const u=current();return '<div class="paper"><span class="masthead">✦ ENGLISH PRACTICE HUB</span><h2>'+esc(u.title)+'</h2><p>'+esc(u.topic)+'</p><div class="rule"></div><p>'+esc(text)+'</p></div>';}
 function draftText(){
  const u=current(),l=u.lesson,p=u.practice;
- if(state.printType==="lesson")return [u.title,u.topic,"","BÀI GIẢNG CHI TIẾT",l.overview,...l.sections.map(s=>"\n"+s.title+"\n"+s.content),...(state.printNotes?["","TEACHER NOTES",...l.notes.map((n,i)=>(i+1)+". "+n)]:[])].join("\n");
+ if(state.printType==="lesson")return [u.title,u.topic,"","BÀI GIẢNG CHI TIẾT",l.overview,...l.sections.map(s=>"\n"+s.title+"\n"+s.content),...(state.printNotes?["","TEACHER NOTES",...l.notes.map((n,i)=>(i+1)+". "+n)]:[]),...(state.printOriginal?["","LỜI GIẢI 40 CÂU GỐC",...(l.originalSolutions||[]).map(x=>x.title+"\n"+x.content)]:[])].join("\n");
  const all=[...p.mcq,...p.reading.questions];const lines=[u.title,u.topic,"","PHẦN I — "+p.mcq.length+" CÂU VOCABULARY"];
  p.mcq.forEach((q,i)=>{q=normalizeQ(q);lines.push("\n"+(i+1)+". "+q.question);q.options.forEach((v,k)=>lines.push("   "+"ABCD"[k]+". "+v));});
  lines.push("","PHẦN II — READING PASSAGE",p.reading.passage);
@@ -205,8 +228,8 @@ function draftText(){
 }
 function printPage(){
  const u=current(),draft=state.personalDraft;
- return sectionHeader(u,"In tài liệu")+'<div class="row between" style="margin-bottom:20px"><div><span class="eyebrow">PRINT STUDIO</span><h2 style="margin:12px 0 4px">In & Xuất PDF</h2></div><span class="badge">'+esc(u.title)+'</span></div><div class="print-grid"><div class="control"><h3>Tùy chọn bản in</h3><div class="form-row"><label class="form-label" for="print-type">Loại tài liệu</label><select id="print-type" class="field"><option value="lesson" '+(state.printType==="lesson"?"selected":"")+'>Bài giảng chi tiết</option><option value="practice" '+(state.printType==="practice"?"selected":"")+'>Bài tập mới · 10 + 5</option></select></div>'+
- (state.printType==="lesson"?'<label class="checkline">Kèm Teacher Notes<input id="print-notes" type="checkbox" '+(state.printNotes?"checked":"")+'></label>':'<label class="checkline">Đáp án ở cuối file<input id="print-answers" type="checkbox" '+(state.printAnswers?"checked":"")+'></label>')+
+ return sectionHeader(u,"In tài liệu")+'<div class="row between" style="margin-bottom:20px"><div><span class="eyebrow">PRINT STUDIO</span><h2 style="margin:12px 0 4px">In & Xuất PDF</h2></div><span class="badge">'+esc(u.title)+'</span></div><div class="print-grid"><div class="control"><h3>Tùy chọn bản in</h3><div class="form-row"><label class="form-label" for="print-type">Loại tài liệu</label><select id="print-type" class="field"><option value="lesson" '+(state.printType==="lesson"?"selected":"")+'>Bài giảng chi tiết</option><option value="practice" '+(state.printType==="practice"?"selected":"")+'>Bài tập mới · '+newQ(u).length+' + 5</option></select></div>'+
+ (state.printType==="lesson"?'<label class="checkline">Kèm Teacher Notes<input id="print-notes" type="checkbox" '+(state.printNotes?"checked":"")+'></label><label class="checkline">Kèm lời giải 40 câu gốc<input id="print-original" type="checkbox" '+(state.printOriginal?"checked":"")+'></label>':'<label class="checkline">Đáp án ở cuối file<input id="print-answers" type="checkbox" '+(state.printAnswers?"checked":"")+'></label>')+
  '<div style="height:19px"></div><button class="btn secondary block" data-edit-print>'+(draft?"Hoàn tất chỉnh sửa":"✎ Chỉnh sửa bản in")+'</button>'+
  (draft?'<div class="form-row"><label class="form-label" for="print-editor">Bản cá nhân</label><textarea class="field" id="print-editor" style="min-height:270px">'+esc(state.printText)+'</textarea><button class="btn secondary small" style="margin-top:10px" data-reset-print>Khôi phục</button></div>':"")+
  '<button class="btn primary block" style="margin-top:10px" data-print>↓ In / Lưu PDF</button></div>'+
@@ -261,6 +284,7 @@ document.addEventListener("click",e=>{
 document.addEventListener("change",e=>{
  if(e.target.id==="print-type"){state.printType=e.target.value;state.personalDraft=false;render();}
  if(e.target.id==="print-notes"){state.printNotes=e.target.checked;state.personalDraft=false;render();}
+ if(e.target.id==="print-original"){state.printOriginal=e.target.checked;state.personalDraft=false;render();}
  if(e.target.id==="print-answers"){state.printAnswers=e.target.checked;state.personalDraft=false;render();}
 });
 document.addEventListener("input",e=>{
